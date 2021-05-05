@@ -1,0 +1,15 @@
+@import "print.css" print;
+@import "screen.css" screen;
+
+/* @media screen{
+  body{
+    color:red;
+  }
+} */
+/* 
+@media print{
+  body{
+    color: green;
+  }
+} */
+

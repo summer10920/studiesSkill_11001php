@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="screen.css" media="screen">
+  <link rel="stylesheet" href="print.css" media="print"> -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    @media screen and (min-width:400px) {
+      h1 {
+        color: red;
+      }
+    }
+
+    @media (max-width:700px),
+    print {
+      h1 {
+        color: green;
+      }
+    }
+
+    @media (min-width: 400px) and (max-width:700px) {
+      h1 {
+        color: yellow;
+      }
+    }
+
+    /******************************************************/
+    @media (min-width: 300px) {
+      body {
+        background: lightblue;
+      }
+    }
+
+    @media (min-width: 500px) {
+      body {
+        background: lightsalmon;
+      }
+    }
+
+    @media (min-width: 700px) {
+      body {
+        background: lightgreen;
+      }
+    }
+
+    @media (min-width: 900px) {
+      body {
+        background: lightyellow;
+      }
+    }
+
+    /*************************************************************/
+    .box {
+      width: 100%;
+      height: 100px;
+    }
+
+    @media (min-width: 768px) {
+      .box {
+        width: 50%;
+        height: 200px;
+        float: left;
+      }
+    }
+
+    @media print{
+      h1{
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HELLO WORLD</h1>
+  <div class="box" style="background: orange;"></div>
+  <div class="box noPrint" style="background: palevioletred;"></div>
+</body>
+
+</html>

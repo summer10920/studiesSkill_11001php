@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>變形</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      line-height: 100px;
+      position: relative;
+    }
+
+    .box::after {
+      content: "Transform";
+      /* display: block; */
+      background: blue;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      opacity: 0.5;
+
+
+      /*********************************************************translate*/
+      transform: translate(-50%, -50%);
+      transform: translateX(100%) translateY(100%);
+      /*translateX*/
+      transform: translate(100%);
+      /*translateY*/
+      transform: translate(0, 100%);
+
+      /*******************************************************scale*/
+      transform: scale(3);
+      transform: scale(3, 1);
+      transform: translate(0, 100%) scale(-3);
+
+      /***************************************rotate*/
+      transform: translate(100%) rotate(90deg);
+      transform: translate(100%) rotate(0.25turn);
+
+      /***************************************skew 歪斜*/
+      transform: translate(200%) skew(45deg);
+      transform: translate(200%) skew(0deg, 45deg);
+
+
+      /***************************transform-origin  指定變形點*/
+      transform:rotate(30deg);
+      transform-origin: 100px 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">Before</div>
+</body>
+
+</html>

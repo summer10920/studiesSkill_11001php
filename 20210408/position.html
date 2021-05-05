@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 100px;
+      background: #eee;
+      margin: 0;
+      height: 100vh;
+    }
+
+    .main {
+      padding-top: calc(50vh - 100px);
+      border: solid red;
+      background: rgba(153, 153, 153, 0.383);
+      height: 100%;
+      position: relative;
+    }
+
+    .bigbox {
+      width: 306px;
+      border: 3px solid;
+      background: #555;
+      font-size: 0;
+      /* overflow: hidden;  */
+      /* 搭配 float 消除溢位 */
+      /* margin: -123px auto 0; */
+
+      position: absolute;
+      height: 246px;
+      /* left:50%;
+      top: 50%;
+      transform: translate(-50%,-50%); */
+      left:0;
+      top:0;
+      right:0;
+      bottom:0;
+      margin: auto;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      color: white;
+      background: darkmagenta;
+      text-align: center;
+      line-height: 50px;
+      font-size: 1rem;
+      display: inline-block;
+      /* float: left; */
+    }
+    .relative{
+      position: relative;
+      background: lightcoral;
+      top:25px;
+      /* right:25px; */
+      left:-90px;
+      /* bottom:25px; */
+      z-index: -9;
+    }
+    .absolute{
+      background: lightgreen;
+      position: absolute;
+      top:65px;
+      left:-15px;
+      /* right:0; */
+      /* bottom:0; */
+      z-index: 99;
+    }
+    .fixed{
+      position: fixed;
+      background:lightseagreen;
+      top:0;
+      right:0;
+    }
+    .close{
+      position: absolute;
+      background: rgba(224, 255, 255, 0.452);
+      border-radius: 50%;
+      right: -30px;
+      top:-30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="bigbox">
+      <div class="box">01</div>
+      <div class="box">02</div>
+      <div class="box">03</div>
+      <div class="box">04</div>
+      <div class="box">05</div>
+      <div class="box" style="z-index: 999; position: relative;">06</div>
+      <div class="box relative">07</div>
+      <div class="box">08</div>
+      <div class="box">09</div>
+      <div class="box">10</div>
+      <div class="box">11</div>
+      <div class="box">12</div>
+      <div class="box absolute">13</div>
+      <div class="box">14</div>
+      <div class="box fixed">15</div>
+      <div class="box">16</div>
+      <div class="box">17</div>
+      <div class="box">18</div>
+      <div class="box">19</div>
+      <div class="box">20</div>
+      <div class="box close">X</div>
+    </div>
+  </div>
+</body>
+
+</html>

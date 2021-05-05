@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    span {
+      color: red;
+      float: left;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      background: pink;
+
+    }
+
+    img {
+      float: right;
+      margin: 10px;
+    }
+
+    .floatBox::after,.floatBox::before {
+      content: "";
+      display: block;
+      clear: both; /*關閉float*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://fakeimg.pl/100x100/ffff00" style="float:left">
+    <p>Lorem, ipsum.</p>
+  </div>
+  <div class="container floatBox">
+    <img src="https://fakeimg.pl/100x100/ff0000">
+    <img src="https://fakeimg.pl/100x100/00ff00" style="float:left">
+    <img src="https://fakeimg.pl/100x100/0000ff">
+    <img src="https://fakeimg.pl/100x100/ff00ff" style="float:left">
+    A B C
+
+    <!-- <p>Lorem AAA? <span>Porro</span> provident saepe quisquam commodi delectus eius <span>quis</span> voluptas facere cum laboriosam qui omnis assumenda velit nobis rem ex, temporibus repellat quam eveniet totam alias. Pariatur eum consectetur expedita dicta autem praesentium, facere ullam invento</p> -->
+  </div>
+  <div>F</div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div>div{
+      height: 100px;
+    }
+    .demo1>.side1{
+      width: 20%;
+      background: lightskyblue;
+      float: left;
+    }
+    .demo1>.side2{
+      width: 20%;
+      background: lightpink;
+      float: right;
+    }
+    .demo1>.main{
+      width: 60%;
+      background:lightseagreen;
+      margin:0 20%;
+    }
+    .demo2>.side1{
+      width: 20%;
+      background: lightskyblue;
+      float: left;
+    }
+    .demo2>.side2{
+      width: 20%;
+      background: lightpink;
+      float: left;
+    }
+    .demo2>.main{
+      width: 60%;
+      background:lightseagreen;
+      float: left;
+    }
+    .demo3>.side1{
+      width: 20%;
+      background: lightskyblue;
+      float: left;
+    }
+    .demo3>.side2{
+      width: 20%;
+      background: lightpink;
+      float: right;
+    }
+    .demo3>.main{
+      width: 60%;
+      background:lightseagreen;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo1">
+    <div class="side1">A</div>
+    <div class="side2">B</div>
+    <div class="main">C</div>
+  </div>
+  <hr>
+  <div class="demo2" style="overflow: auto;">
+    <div class="side1">A</div>
+    <div class="main">C</div>
+    <div class="side2">B</div>
+    <!--or 這裡弄個元素設定clear，要求從這裡開始不要再列入float文繞規劃(清除float)-->
+  </div>
+  <hr>
+  <div class="demo3" style="overflow: auto;">
+    <div class="side1">A</div>
+    <div class="side2">B</div>
+    <div class="main">C</div>
+    <!--or 這裡弄個元素設定clear，要求從這裡開始不要再列入float文繞規劃(清除float)-->
+  </div>
+  <hr>
+</body>
+</html>

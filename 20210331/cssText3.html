@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .demo1,.demo2 {
+      width: 200px;
+      font-size: 20px;
+      background: pink;
+    }
+    div.demo1 {
+      line-height: 40px;
+    }
+    div.demo2 {
+      line-height: 2;
+    }
+    div.demo3{
+      width: 200px;
+      height: 200px;
+      background: pink;
+      text-align: center;
+      line-height: 200px;
+      /* white-space: nowrap;
+      overflow: hidden; */
+    }
+    nav{
+      background: lightyellow;
+      background: #3339;
+      text-align: center;
+    }
+    nav>a{
+      /* inline 沒有w 跟h , 需要轉為 block */
+      display: inline-block;
+      height:50px;
+      width: 100px;
+      text-align: center;
+      line-height: 50px;
+
+      color:white;
+      text-decoration: none;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo1">
+    Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Dolorem, possimus.
+  </div>
+  <hr>
+  <div class="demo2">
+    Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Dolorem, possimus.
+  </div>
+  <hr>
+  <div class="demo3">Lorem Lorem</div>
+  <hr>
+  <nav>
+    <a href="#">產品介紹</a>
+    <a href="#">客戶案例</a>
+    <a href="#">最新消息</a>
+    <a href="#">聯絡我們</a>
+  </nav>
+
+  <h1>Vertical-align(for inline 行內 or img)</h1>
+  <div>
+    <span>Default</span>
+    <span style="vertical-align: middle;">Middle</span>
+    <img src="https://fakeimg.pl/50x50" style="vertical-align: middle;">
+    <img src="https://fakeimg.pl/50x50" style="vertical-align: bottom;">
+  </div>
+
+  <div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .flex {
+      background: rgba(255, 166, 0, 0.151);
+      height: 600px;
+      width: 600px;
+
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+
+      justify-content: space-between;
+    }
+
+    .item {
+      width: 200px; /*(主軸分配空間 on row)*/
+      height: 200px; /*(主軸分配空間 on col)*/
+
+      /* flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 30%; */
+      /*contact<width(or height)<basis on 主軸*/
+      flex: 0 1 30%;
+    }
+
+    .red {
+      background: red;
+      order:0; /*default*/
+    }
+
+    .green {
+      background: green;
+      order:2; /* 數字越大往END排*/
+    }
+
+    .blue {
+      background: blue;
+      order:-2; /* 同上反之往start排*/
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flex">
+    <div class="item red">A</div>
+    <div class="item green">B</div>
+    <div class="item blue">C</div>
+  </div>
+</body>
+
+</html>

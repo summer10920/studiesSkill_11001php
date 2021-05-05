@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex {
+      background: rgba(255, 166, 0, 0.151);
+      height: 500px;
+      /* width: 600px; */
+
+      display: flex;
+      flex-flow: row nowrap;
+
+      justify-content: space-between;
+    }
+
+    .item {
+      width: 100px;
+      flex-grow: 1;
+    }
+
+    .red {
+      background: red;
+      /* flex-grow: 0; */
+    }
+
+    .green {
+      background: green;
+      /* flex-grow: 1; */
+    }
+
+    .blue {
+      background: blue;
+      /* flex-grow: 2; */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flex">
+    <div class="item red">ABCD</div>
+    <div class="item green">B</div>
+    <div class="item blue">C</div>
+  </div>
+</body>
+
+</html>

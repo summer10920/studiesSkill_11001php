@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字型</title>
+</head>
+<body>
+  <div>Lorem, ipsum dolor.</div>
+  <div style="font-size: 16px;">Lorem, ipsum dolor.</div>
+  <div style="font-size: 24px;">Lorem, ipsum dolor.</div>
+
+  <div style="font-size: 1.5rem;">Lorem, ipsum dolor. 相對值：對於瀏覽器的 root 之基礎單位做倍率</div>
+  <div style="font-size: 1.5em;">Lorem, ipsum dolor. 相對值：對於元素所該呈現的單位再做倍率</div>
+
+  <h1>H1 | font-size: 32px | Lorem, ipsum dolor.</h1>
+  <p style="font-size: 2em;font-weight: bold;">Lorem, ipsum dolor.</p>
+
+  <hr>
+  
+  <div style="font-size: 1em;">FONT 16
+    <div style="font-size: 2em;">FONT 16*2=32
+      <div style="font-size: 3em;">FONT 32*3=96</div>
+      <h1>H1 | font-size: 64px | Lorem, ipsum dolor.</h1>
+    </div>
+  </div>
+  <div style="font-size: 96px;">FONT 96</div>
+
+  <hr>
+
+  <div style="font-size: 1rem;">FONT 16
+    <div style="font-size: 2rem;">FONT 32
+      <div style="font-size: 3rem;">FONT 48</div>
+    </div>
+  </div>
+  <div style="font-size: 48px;">FONT 48</div>
+</body>
+</html>

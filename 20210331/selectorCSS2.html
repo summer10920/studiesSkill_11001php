@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 屬性 */
+    input[type]{  /*持有屬性*/
+      color:red;
+    }
+    input[type="text"]{ /*持有屬性與指定值*/
+      color:blue;
+    }
+
+    /* 屬性選擇還有進階寫法 ex: 
+      a[href='http://www.google.com']  指定值 ???
+      a[href^='http://']  指定值 ??? 開頭
+      a[href$='.com']  指定值 ??? 結尾
+      a[href*='google']  指定值 包含 ???
+      a[class~='wordB']  指定值 包含 ??? 之單字
+      a.wordB
+    */
+    
+    
+  </style>
+</head>
+<body>
+  <a href="http://www.google.com" title="Google" class="wordA wordB">Google</a>
+
+  <hr>
+
+  <input type="text" name="acc" value="Loki">
+  <input name="acc2" value="Loki">
+  <input type="password" name="pwd" value="ji32k7au4a83">
+
+  <a href="#goto1">GoTo1</a>
+  <a href="#goto2">GoTo2</a>
+  <a href="#goto3">GoTo3</a>
+</body>
+</html>

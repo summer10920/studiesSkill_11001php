@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>block vs inline</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    div.demo1>* {
+      width: 200px;
+      height: 200px;
+      background: lightblue;
+      margin: 20px;
+      border: 20px solid;
+      padding: 20px;
+    }
+    div.demo2>div{
+      background: lightcoral;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+    div.demo3>div{
+      display: inline;
+    }
+    div.demo3>span{
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo3">
+    <div>now div is inline</div>
+    <span>now span is block</span>
+  </div>
+  <div class="demo2">
+    <div>lorem</div>
+    <div>lorem</div>
+    <div>lorem</div>
+    <span>lorem</span>
+    <span>lorem</span>
+  </div>
+  <div class="demo1">
+    <div>block 區塊元素</div>
+    <div>block 區塊元素</div>
+    <div>block 區塊元素</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span>inline 行內元素</span>
+    <span>inline 行內元素</span>
+  </div>
+
+
+  <!-- <hr>
+  <h1>i am block</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, voluptatum.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, voluptatum.</p>
+  <div>
+    <a href="#">i am inline</a>
+    <a href="#">i am inline</a>
+    <img src="https://fakeimg.pl/200x200">
+    <input type="text" value="DATA">
+  </div> -->
+</body>
+
+</html>

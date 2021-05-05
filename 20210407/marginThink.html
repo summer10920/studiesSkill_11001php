@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 500px;
+      background: #000;
+    }
+
+    p {
+      height: 30px;
+      background: gray;
+    }
+
+    .demo1 {
+      width: 100px;
+      margin-left: auto;/*???*/
+      margin-right: 100px;
+    }
+
+    .demo2 {
+      width: 100px;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+    .demo3{
+      /* width: auto; */  /*某些情況下跟100%不是相同結果*/
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+    .demo4{
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .demo5{
+      width: auto;
+      margin-left: auto;
+      margin-right: 100px;
+    }
+    .demo6{
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p class="demo1"></p>
+    <p class="demo2"></p>
+    <p class="demo3"></p>
+    <p class="demo4"></p>
+    <p class="demo5"></p>
+    <p class="demo6"></p>
+  </div>
+</body>
+
+</html>

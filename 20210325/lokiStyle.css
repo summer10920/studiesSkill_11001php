@@ -1,0 +1,11 @@
+/* import:CSS語法 */
+@import url("forImport.css");  /* string 文字串 */
+@import 'forImport2.css';
+
+
+h1,
+p {
+  color: yellow;
+  /* background-color: black; */
+  /* font-size: 50px; */
+}

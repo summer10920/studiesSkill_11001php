@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    .flex {
+      background: rgba(255, 166, 0, 0.151);
+      height: 500px;
+      /* width: 600px; */
+
+      display: flex;
+      align-items: center;
+      flex-flow: row nowrap;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+
+    .red {
+      background: red;
+      flex-shrink: 0;
+    }
+
+    .green {
+      background: green;
+      flex-shrink: 1;
+    }
+
+    .blue {
+      background: blue;
+      flex-shrink: 4;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="flex">
+    <div class="item red">A</div>
+    <div class="item green">B</div>
+    <div class="item blue">C</div>
+  </div>
+</body>
+
+</html>

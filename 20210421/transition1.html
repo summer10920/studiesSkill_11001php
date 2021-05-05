@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轉場</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      background-color: red;
+      /*
+      transition-property: all;
+      transition-duration: 500ms;
+      transition-timing-function: ease-in;
+      transition-delay: 2s;
+      */
+      /* transition: background 1s linear, width 2s ease; */
+      transition-property: background-color, width, transform;
+      transition-duration: 1s, 1s, 1s;
+      transition-timing-function: ease-in, ease, ease-out;
+      transition-delay: 0s, 1s, 2s;
+    }
+
+    .box:hover {
+      background-color: blue;
+      width: 500px;
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">Before</div>
+</body>
+
+</html>

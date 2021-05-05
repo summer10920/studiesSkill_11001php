@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字段</title>
+  <style>
+    p{
+      width: 9rem;
+      background: pink;
+    }
+    p.demo1{
+      word-break: keep-all;
+    }
+    p.demo2{
+      word-break: break-all;
+    }
+    p.demo3{
+      overflow-wrap: break-word;
+    }
+    p.demo4{
+      white-space: pre-wrap;  /*normal,pre,nowrap,pre-wrap*/
+    }
+  </style>
+</head>
+<body>
+  <h1>Word-break:keep-all</h1>
+  <p class="demo1">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pneumonoultramicroscopicsilicovolcanoconiosis Doloremque totam deserunt neque sequi esse illo nobis obcaecati, assumenda repellat mollitia.
+  </p>
+  <h1>Word-break:break-all</h1>
+  <p class="demo2" style="text-align: center;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pneumonoultramicroscopicsilicovolcanoconiosis Doloremque totam deserunt neque sequi esse illo nobis obcaecati, assumenda repellat mollitia.
+  </p>
+  <h1>overflow-wrap:break-word</h1>
+  <p class="demo3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pneumonoultramicroscopicsilicovolcanoconiosis Doloremque totam deserunt neque sequi esse illo nobis obcaecati, assumenda repellat mollitia.
+  </p>
+  <h1>White-space:nowrap</h1>
+  <p class="demo4">
+    A
+      B
+        C
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pneumonoultramicroscopicsilicovolcanoconiosis Doloremque totam deserunt neque sequi esse illo nobis obcaecati, assumenda repellat mollitia.
+  </p>
+</body>
+</html>

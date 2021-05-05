@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- table>(thead>tr>th*4)+(tbody>(tr>td*4)*3)+tfoot>tr>td*4 -->
+  <!-- colspan -->
+  <!-- rowspan -->
+  <table border="1" bgcolor="#ccc" width="700" cellspacing="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>學號</th>
+        <th>姓名</th>
+        <th>英文成績</th>
+        <th>數學成績</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>王曉明</td>
+        <td align="center">97</td>
+        <td align="center">68</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td colspan="3" rowspan="2">陳小美</td>
+      </tr>
+      <tr>
+        <td>3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">共3名</td>
+        <td>平均80分</td>
+        <td>平均80分</td>
+      </tr>
+    </tfoot>
+  </table>
+  
+</body>
+
+</html>

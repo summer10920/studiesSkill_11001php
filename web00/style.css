@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  font-family: '標楷體';
+  overflow: hidden;
+}
+
+body.main {
+  width: 1024px;
+  padding: 0 12px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+body>*:not(aside, section),
+aside>*,
+section>* {
+  border: 1px solid #7777;
+}
+
+header.top {
+  flex-basis: 1000px;
+  height: 65px;
+}
+
+footer.footer {
+  flex-basis: 1000px;
+  height: 20px;
+
+  color:#000;
+  font-size: 16px;  
+}
+
+aside {
+  flex-basis: 215px;
+  height: calc(768px - 65px - 20px);
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+aside>nav.menu {
+  flex-basis: calc(100% - 25px);
+}
+
+aside>footer.update {
+  flex-basis: 25px;
+}
+
+section {
+  flex-basis: calc(1000px - 215px);
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+section>header.marquee {
+  flex-basis: 31px;
+  padding: 0 calc((100% - 770px - 2px) / 2);
+  /* 這裡因需內容770但總值785，故算好padding來彌補差額 */
+
+  /****************************************************No.4*/
+  font-size: 24px;
+  color: #0000ff;
+}
+
+section>main.content {
+  flex-basis: calc(100% - 31px);
+  padding: calc((100% - 770px - 2px) / 2);
+}
+
+/****************************************************No.3*/
+header.top>a {
+  display: block;
+}
+
+/****************************************************No.5*/
+nav.menu>header {
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: underline;
+  color: #f0f;
+  margin: 20px 0;
+}
+
+nav.menu>a {
+  display: inline-block;
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+  color: #000;
+  font-size: 16px;
+  background: url('media/menu1.png') no-repeat;
+}
+
+nav.menu>a:hover {
+  background: url('media/menu2.png') no-repeat;
+}
+
+/****************************************************No.6*/
+footer.update {
+  font-size: 16px;
+}
+
+/****************************************************No.6*/
+main.content>iframe{
+  width: 100%;
+  height: 100%;
+}
+

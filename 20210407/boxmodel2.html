@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      /* height: 400px; */
+    }
+
+    div {
+      background: darkcyan;
+      /* width: 50%;   */
+      /*  px, %, vw(viewpoint width),vh(viewpoint height) rem, em */
+      /* height: 100vw; */
+      /* 同上，但有些情況結果需先理解理由*/
+
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+
+      /* margin-top:10px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      margin-left: 40px; */
+      /* margin: 10px 20px 30px 40px; */
+      /* margin: -10px 0 0 0; */
+      margin: 10%; /* %指的是父容器的總寬 */
+
+      padding:10px 20px 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div style="width: 10px;height: 10px;background: darkgoldenrod;"></div>
+  </div>
+  <!-- <div>A</div> -->
+  <!-- <div style="margin:-50px 0 0 -50px">A</div> -->
+  <h1>Lorem ipsum dolor sit amet.</h1>
+</body>
+
+</html>

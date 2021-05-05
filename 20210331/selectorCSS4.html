@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關係偽類</title>
+  <style>
+    p:first-child{
+      color:red;
+    }
+    p:last-child{
+      color:red;
+    }
+    p:nth-child(2n+1){ /*1,3,5,7,9....*/
+      color:purple;
+    }
+    p:nth-child(3n){ /*3,6,9,12....*/
+      color:blue;
+    }
+    p:nth-child(-n+3){ /*3,2,1*/
+      color:orange;
+    }
+    p:nth-child(odd){ /*奇數 同等 2n+1....，同理寫可 even 為偶數*/
+      color:orchid;
+    }
+    p:nth-last-child(3){ /*倒數第三個*/
+      color:seagreen;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>NTH - CHILD</h1>
+  <p>指找到父層之指定兒子(chlid)</p>
+  <hr>
+  <div>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <div>Lorem, ipsum dolor.</div>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <p>P Lorem, ipsum dolor.</p>
+    <hr>
+    <nav>NAV Lorem, ipsum dolor.</nav>
+    <p>P Lorem, ipsum dolor.</p>
+    <nav>NAV Lorem, ipsum dolor.</nav>
+    <p>P Lorem, ipsum dolor.</p>
+    <nav>NAV Lorem, ipsum dolor.</nav>
+    <p>P Lorem, ipsum dolor.</p>
+    <nav>NAV Lorem, ipsum dolor.</nav>
+    <p>P Lorem, ipsum dolor.</p>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex {
+      color: white;
+      font-size: 2rem;
+      border: solid;
+      background: rgba(255, 166, 0, 0.2);
+      height: 400px;
+      /* width: 450px; */
+
+      /* display: inline-flex; */
+      display: flex;
+
+      justify-content: flex-start;
+      align-items: center;
+      /*stretch:延伸，當item不設定指定交軸之空間單位則填滿整個容器*/
+
+      
+      /*flex-direction: row-reverse; /*row-reverse*//*主軸方向*/
+      /*flex-wrap: wrap-reverse;/*可否換行*/
+
+      flex-flow: row-reverse wrap-reverse;
+      /* flex-flow: row-reverse nowrap; */
+
+    }
+
+    .item {
+      width: 300px;
+      height: 100px;
+    }
+
+    .red {
+      background: red;
+    }
+
+    .green {
+      background: green;
+    }
+
+    .blue {
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <strong class="flex">
+    <span class="item red">1</span>
+    <span class="item green">2</span>
+    <span class="item blue">3</span>
+    <span class="item red">4</span>
+    <span class="item green">5</span>
+    <span class="item blue">6</span>
+  </strong>
+</body>
+
+</html>

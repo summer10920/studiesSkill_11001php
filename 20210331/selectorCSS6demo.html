@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .imgBeauty {
+      border: 6px solid #fff;
+      /**/
+      float: left;
+      margin: 50px;
+      position: relative;
+      /*讓偽元素定位在父元素中*/
+      -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .imgBeauty:before,
+    .imgBeauty:after {
+      content: "AAAA";
+      height: 160px;
+      width: 123px;
+      border: 6px solid #fff;
+      z-index: -1;
+      /*讓偽元素置於父元素之下*/
+      -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      /*調整偽元素的位置*/
+
+    }
+
+    .imgBeauty:before {
+      background: #eff4de;
+      top: 0px;
+      left: -10px;
+      -webkit-transform: rotate(-5deg);
+      -moz-transform: rotate(-5deg);
+      -o-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+      transform: rotate(-5deg);
+    }
+
+    .imgBeauty:after {
+      background: #91A2AF;
+      z-index: -1;
+      top: 5px;
+      left: 0px;
+      -webkit-transform: rotate(4deg);
+      -moz-transform: rotate(4deg);
+      -o-transform: rotate(4deg);
+      -ms-transform: rotate(4deg);
+      transform: rotate(4deg);
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="imgBeauty">
+    <img src="http://img.itkm.trendforce.com.tw/wp-content/uploads/2018/06/13135406/ex-pic.jpg">
+  </div>
+
+
+  <div>
+    LV1-B
+    <div>
+      LV2-B
+      <div>SPAN <img> SPAN</div>
+      LV2-A
+    </div>
+    LV1-A
+  </div>
+
+  <div>
+    *1
+    <div>*3</div>
+    <div>*3</div>
+    <div>*3</div>
+    <img>
+    *1
+
+    <span>""CONTENT""</span>
+    <img src="https://fakeimg.pl/20x20">
+    <input type="text" value="LOKI">
+  </div>
+
+
+  <div></div>
+
+
+</body>
+
+</html>

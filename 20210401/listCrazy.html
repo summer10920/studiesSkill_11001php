@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul:not([start],.menu){
+      /*
+      list-style-position: inside;
+      style="list-style-image: url(gif.gif);"
+      */
+      list-style: inside url(gif.gif) cjk-ideographic;
+    }
+    li:not(ul.menu>li){
+      border:1px solid;
+    }
+  </style>
+</head>
+<body>
+  <ul start="5" style="list-style-type: cjk-ideographic;">
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ul>
+  <ol start="5" style="list-style-type: cjk-ideographic;">
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ol>
+  <ul>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ul>
+  <hr>
+  <!-- ul>(li>a[href=#]{$$})*4 -->
+  <ul class="menu">
+    <li><a href="#">關於我們</a></li>
+    <li><a href="#">產品介紹</a></li>
+    <li><a href="#">客戶案落</a></li>
+    <li><a href="#">售後服務</a></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*複合選擇*/
+
+    nav>p.loki {
+      /* 符號 '>' 代表子代  => nav 的兒子 p 為選擇 */
+      color: red;
+    }
+
+    nav p {
+      /* 符號 ' ' 代表後代  => nav 的子孫 p 為選擇 */
+      color: purple;
+    }
+
+    nav {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <p class="loki">P Lorem ipsum dolor sit amet.</p>
+    <div>DIV Lorem ipsum dolor sit amet.</div>
+    <div>
+      <p>P Lorem ipsum dolor sit amet.</p>
+      <div>DIV Lorem ipsum dolor sit amet.</div>
+      <div>
+        <p>P Lorem ipsum dolor sit amet.</p>
+        <div>DIV Lorem ipsum dolor sit amet.</div>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>

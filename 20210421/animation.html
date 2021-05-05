@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: #333;
+      margin: 0;
+      color: white;
+      height: 100vh;
+      display: flex;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+    body>*{
+      flex:0 1 auto;
+      /* min-width: 40vw; */
+    }
+
+    .base {
+      width: 100px;
+      height: 100px;
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: demo1 1s ease 100ms infinite alternate;
+      /* animation-play-state: paused; */
+    }
+
+    @keyframes demo1 {
+
+      /* from{
+        background: red;
+      } */
+      to {
+        background: yellow;
+      }
+    }
+
+    .btn {
+      width: 100px;
+      height: 50px;
+      background: goldenrod;
+      border-radius: 5px;
+      line-height: 50px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: "";
+      background: #fff8;
+      background: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+      /* display: block;
+      width: 500px;
+      height: 500px; */
+      transform: translate(-60%);
+
+      position: absolute;
+      /* left: -100%;
+      top: -100%;
+      right: -100%;
+      bottom: -100%; */
+      /* animation: demo2 2s linear infinite; */
+
+      left: -100%;
+      top: -100%;
+      width: 300%;
+      height: 300%;
+      animation: demo2-1 2s linear infinite;
+    }
+
+    @keyframes demo2 {
+      50% {
+        transform: translate(-5%);
+      }
+
+      70% {
+        transform: translate(20%);
+      }
+
+      100% {
+        transform: translate(60%);
+      }
+    }
+
+    @keyframes demo2-1 {
+      40% {
+        left: 6%;
+      }
+
+      60% {
+        left: 80%;
+      }
+
+      100% {
+        left: 250%;
+      }
+    }
+
+    .load {
+      width: 100px;
+      position: relative;
+      margin: 35px 110px 0;
+    }
+
+    .load::before,
+    .load::after {
+      content: "";
+      border: 1px solid #eee;
+      position: absolute;
+      top: -2rem;
+      bottom: 2rem;
+      left: -100%;
+      right: -100%;
+    }
+
+    .load::after {
+      animation: demo3 4s linear infinite alternate;
+    }
+
+    @keyframes demo3 {
+      0% {
+        right: 200%;
+      }
+
+      25%,
+      75% {
+        background: #500;
+      }
+
+      45% {
+        background: #e00;
+      }
+
+      90% {
+        right: -100%;
+        background: #f00;
+      }
+
+      100% {
+        background: #f00;
+      }
+    }
+
+    .rgb {
+      font-size: 5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5rem;
+      border: 1.5px solid white;
+      padding: 1rem 0.5rem 1rem 2rem;
+      border-radius: 4px;
+
+      animation: rgb 5s linear infinite, breath 6s linear infinite;
+
+    }
+
+    @keyframes rgb {
+
+      0%,
+      100% {
+        text-shadow: 0 0 1rem #f00e, 0 0 4rem #f009;
+      }
+
+      33% {
+        text-shadow: 0 0 1rem #0f0e, 0 0 4rem #0f09;
+      }
+
+      66% {
+        text-shadow: 0 0 1rem #00fe, 0 0 4rem #00f9;
+      }
+    }
+
+    @keyframes breath {
+
+      0%,
+      100% {
+        box-shadow: 0 0 1rem 0 #f00e, 0 0 4rem 0 #f009, inset 0 0 1rem 0 #f00e, inset 0 0 4rem 0 #f009;
+      }
+
+      16.6% {
+        box-shadow: 0 0 1rem 0 #ff0e, 0 0 1rem 0 #ff09, inset 0 0 1rem 0 #ff0e, inset 0 0 1rem 0 #ff09;
+      }
+
+      33.3% {
+        box-shadow: 0 0 1rem 0 #0f0e, 0 0 4rem 0 #0f09, inset 0 0 1rem 0 #0f0e, inset 0 0 4rem 0 #0f09;
+      }
+
+      50% {
+        box-shadow: 0 0 1rem 0 #0ffe, 0 0 1rem 0 #0ff9, inset 0 0 1rem 0 #0ffe, inset 0 0 1rem 0 #0ff9;
+      }
+
+      66.6% {
+        box-shadow: 0 0 1rem 0 #00fe, 0 0 4rem 0 #00f9, inset 0 0 1rem 0 #00fe, inset 0 0 4rem 0 #00f9;
+      }
+
+      83.3% {
+        box-shadow: 0 0 1rem 0 #f0fe, 0 0 1rem 0 #f0f9, inset 0 0 1rem 0 #f0fe, inset 0 0 1rem 0 #f0f9;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="base">HELLO WORLD</div>
+  <div class="btn">Button</div>
+  <div class="load">Loading</div>
+  <div class="rgb">Loki</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>偽類、偽類別</title>
+  <style>
+    /*每種元素都持有不同狀態的模式，稱呼為類別(偽) */
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+    a:link{ /*連結提示*/
+      color:purple;
+    }
+    a:visited{ /*已拜訪*/
+      color:green;
+    }
+    a:hover{ /*滑過*/
+      color:orange;
+      font-size: 1.5rem;
+    }
+    a:active{ /*點選當下*/
+      color:brown;
+    }
+    /*否定選擇(偽類)*/
+    div:not(.blk,.meto){
+      color:red;
+    }
+  </style>
+</head>
+<body>
+
+  <div>Lorem, ipsum dolor.</div>
+  <div>Lorem, ipsum dolor.</div>
+  <div>Lorem, ipsum dolor.</div>
+  <div class="blk">I am Black</div>
+  <div>Lorem, ipsum dolor.</div>
+  <div>Lorem, ipsum dolor.</div>
+  <div class="meto">Black Too</div>
+  <div>Lorem, ipsum dolor.</div>
+
+  <a href="http://www.google.com">Google</a>
+  <a href="http://www.kimo.com">kimo</a>
+  <a href="http://www.msn.com">msn</a>
+  <a href="http://www.github.com">github</a>
+</body>
+</html>

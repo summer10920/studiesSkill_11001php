@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    div>div {
+      height: 100px;
+    }
+
+    body>div::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .side1 {
+      width: 20%;
+      background: lightpink;
+      float: left;
+    }
+
+    .main1 {
+      width: 80%;
+      background: lightgreen;
+      margin-left: 20%;
+    }
+
+    .side2 {
+      width: 20%;
+      background: lightpink;
+      float: right;
+    }
+
+    .main2 {
+      width: 80%;
+      background: lightgreen;
+    }
+
+    .side3 {
+      width: 20%;
+      background: lightpink;
+      float: left;
+    }
+
+    .main3 {
+      width: 80%;
+      background: lightgreen;
+      float: left;
+    }
+
+    .side4 {
+      width: 20%;
+      background: lightpink;
+      float: left;
+    }
+
+    .main4 {
+      width: 80%;
+      background: lightgreen;
+      float: right;
+    }
+
+    .side5 {
+      width: 20%;
+      background: lightpink;
+      float: left;
+    }
+
+    .main5 {
+      width: 80%;
+      background: lightgreen;
+      overflow: auto; /*hidden亦可*/
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="side1">float: left;</div>
+    <div class="main1">margin-left: 20%;</div>
+  </div>
+  <hr>
+  <div>
+    <div class="side2">float: right;</div>
+    <div class="main2">undo</div>
+  </div>
+  <hr>
+  <div>
+    <div class="side3">float: left;</div>
+    <div class="main3">float: left;</div>
+  </div>
+  <hr>
+  <div>
+    <div class="side4">float: left;</div>
+    <div class="main4">float: right;</div>
+  </div>
+  <hr>
+  <div>
+    <div class="side5">float: left;</div>
+    <div class="main5">overflow: auto;</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex {
+      color: white;
+      border: solid;
+      background: rgba(255, 166, 0, 0.2);
+      height: 1000px;
+      /* width: 500px; */
+
+
+      display: flex;
+      justify-content: flex-start;
+      /* align-items: stretch; */
+      align-items: flex-start;
+      /* flex-flow: row wrap; */
+      
+      align-content:space-around;
+    }
+
+    .item {
+      width: 150px;
+      /* height: 25%; */
+    }
+
+    .red {
+      background: red;
+      /* align-self: stretch; */
+      /* align-self: flex-end; */
+    }
+
+    .green {
+      background: green;
+      /* align-self: flex-start; */
+    }
+
+    .blue {
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <strong class="flex">
+    <span class="item red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veniam.</span>
+    <span class="item green">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iste quos consequatur
+      aspernatur quo deleniti minus suscipit hic autem molestiae?</span>
+    <span class="item red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veniam.</span>
+    <span class="item green">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iste quos consequatur
+      aspernatur quo deleniti minus suscipit hic autem molestiae?</span>
+    <span class="item red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veniam.</span>
+    <span class="item green">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iste quos consequatur
+      aspernatur quo deleniti minus suscipit hic autem molestiae?</span>
+    <span class="item red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, veniam.</span>
+    <span class="item blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta odit dolor molestias et
+      minus, voluptas ipsa. Esse recusandae eum tenetur quis, reiciendis excepturi. Neque fuga inventore, provident
+      molestiae eveniet optio.</span>
+  </strong>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.demo{
+      background-color: red;
+      background-image: url('144.jpg');
+
+      /* 複合屬性 (雙值語法，這裡可輸入兩個值做操作)*/
+      background-repeat: space no-repeat;
+      
+      background-repeat: no-repeat;
+      /* background-position: 50% 50%; */
+      /* background-position: -10% 50%; */
+      /* background-position: 272px 228px; */
+      /* background-position: -10px 0px; */
+      /* background-position: right center; */
+      /* background-position: center; */
+
+      /*auto(default),cover,contain or px,%)*/
+      /* background-size: contain; */
+      /* background-size: 500px 500px; */
+      background-size: 50% 50%;
+
+      border:10px dashed #ff0;
+      padding: 10px;
+      background-origin: padding-box;
+    }
+    div.ads{
+      height: 20vh;
+      background-image: url("https://picsum.photos/1280/720/?random=1");
+      background-attachment: fixed;
+      /* background-repeat: no-repeat; */
+      background-size: cover;
+      background-position: center;
+      border: 1px solid red;
+    }
+    div.oneLine{
+      height: 100vh;
+      /*
+      background-image: url("https://picsum.photos/1280/720/?random=1");
+      background-color: #f00;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: 10px 20px;  /***** 可輸入% or px
+      background-size: 200px 400px; /***** 可輸入% or px
+      */
+      background: url("https://picsum.photos/1280/720/?random=1") #f00 no-repeat fixed 100px 100px/200px 200px;
+      /* background-position: 100px 100px;
+      background-size: 200px 200px; */
+    }
+    
+  </style>
+</head>
+<body style="margin: 0;">
+  <div class="demo" style="width: 800px;height: 600px;">123</div>
+
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+  <div class="ads"></div>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+  <img src="https://picsum.photos/1280/720/?random=1">
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+  <div class="oneLine"></div>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, molestias? Expedita, perspiciatis? Voluptas eligendi id inventore eum est. Libero, eius? Est nostrum sunt temporibus placeat ratione dicta repellat voluptatem tenetur! Repellendus quasi voluptate, reiciendis architecto aliquid, culpa iste facere temporibus numquam vitae unde dolores nihil possimus eos vel omnis dolorem inventore odio amet saepe dicta! Laboriosam ex distinctio laborum eaque fugit quia! Tempora consequatur animi iusto. Numquam excepturi maiores odit pariatur rem distinctio facere tenetur quibusdam voluptate repellendus amet, necessitatibus nobis incidunt quas obcaecati reprehenderit, veritatis dolorem veniam. Esse laudantium voluptates at vitae architecto laborum voluptatibus deleniti distinctio molestiae ullam ipsam autem praesentium natus magnam excepturi dolor porro, earum necessitatibus pariatur est dolores nobis adipisci. Facilis fugit quas enim cum aut, a laudantium quibusdam voluptatem illum officia vel delectus alias! Laboriosam nobis, sit dolorem numquam, veritatis consectetur quaerat autem assumenda harum mollitia dicta eligendi distinctio, consequuntur magnam minus fugiat repellat accusantium incidunt temporibus. Pariatur earum eius nostrum aperiam odio ullam corrupti temporibus quos consectetur! Dolorem quis cumque quisquam veniam, debitis numquam porro tempore sit doloribus omnis aspernatur expedita aut illo velit provident modi, minus reprehenderit mollitia vel earum deleniti facere ipsum ad sunt. Sed, cupiditate omnis odit assumenda sequi accusamus?</p>
+
+</body>
+</html>

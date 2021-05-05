@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .aa,.bb{
+      list-style-type: cjk-ideographic;
+    }
+    .cc{
+      /*
+      list-style-position: inside;
+      style="list-style-image: url(gif.gif);"
+      */
+      list-style: inside url(gif.gif) cjk-ideographic;
+    }
+    .aa>li,.bb>li{
+      border:1px solid;
+    }
+
+    ul.menu>li{
+      display: inline-block;
+      background:darkblue;
+    }
+    ul.menu{
+      text-align: center;
+      background: lightgreen;
+    }
+    ul.menu a{
+      text-decoration: none;
+      color: white;
+      padding: 15px;  /*inline 沒有內距上下 ，所以需要轉 inline-block*/
+      display: block;
+    }
+
+    div>a{
+      background: #000;
+    }
+
+
+    /*4px的詛咒解除*/
+    /*
+    ul.menu>li{
+      background: red;
+      margin-right: -4px;
+    }
+    */
+    ul.menu{
+      font-size: 0;
+    }
+    ul.menu>li{
+      font-size: 1rem;
+    }
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <ul start="5" class="aa">
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ul>
+  <ol start="5" class="bb">
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ol>
+  <ul class="cc">
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Lorem, ipsum dolor.</li>
+  </ul>
+  <hr>
+  <ul class="menu">
+    <li><a href="#">關於我們</a></li>
+    <li><a href="#">產品介紹</a></li>
+    <li><a href="#">客戶案落</a></li>
+    <li><a href="#">售後服務</a></li>
+  </ul>
+
+  <div>
+    A B C D
+  </div>
+  <div>
+    ABCD
+  </div>
+  <div>
+    A
+    B
+    C
+    D
+  </div>
+</body>
+</html>
