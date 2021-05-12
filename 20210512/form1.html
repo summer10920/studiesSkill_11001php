@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+</head>
+
+<body>
+
+  <form class="container mt-5">
+    <fieldset disabled>
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Password</label>
+        </div>
+        <div class="col-auto">
+          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+          <span id="passwordHelpInline" class="form-text">
+            Must be 8-20 characters long.
+          </span>
+        </div>
+      </div>
+
+
+
+      <hr>
+      <div class="mb-3">
+        <!-- label.form-label+input.form-control+*.form-text -->
+        <label for="lokiMail" class="form-label">電子信箱</label>
+        <input type="email" class="form-control" id="lokiMail">
+        <div class="form-text">請輸入有效信箱地址，提供驗證信件進行收取回應。</div>
+      </div>
+    </fieldset>
+    <div class="mb-3">
+      <label for="lokiPwd" class="form-label">密碼</label>
+      <input type="password" class="form-control" id="lokiPwd">
+    </div>
+
+    <!-- checkbox + label -->
+    <div class="mb-3 form-check">
+      <input class="form-check-input" type="checkbox" id="lokiCheck">
+      <label class="form-check-label user-select-none" for="lokiCheck">我同意用戶隱私權經許可保護</label>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+
+</html>
