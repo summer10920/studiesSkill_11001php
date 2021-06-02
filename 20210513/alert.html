@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js" integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div id="lokiAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+      A simple primary alert—check it out!
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <script>
+      var node =document.getElementById("lokiAlert");
+      var lokiControl=new bootstrap.Alert(node);
+
+      node.addEventListener('closed.bs.alert',function(){
+        alert("訊息已關閉");
+      })
+
+
+    </script>
+    <hr>
+
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      A simple primary alert—check it out!
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+
+    <hr>
+    <div class="alert alert-primary">
+      A simple primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary">
+      A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success">
+      A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger">
+      A simple danger alert—check it out!
+    </div>
+    <div class="alert alert-warning">
+      A simple warning alert—check it out!
+    </div>
+    <div class="alert alert-info">
+      A simple info alert—check it out!
+    </div>
+    <div class="alert alert-light">
+      A simple light alert—check it out!
+    </div>
+    <div class="alert alert-dark">
+      A simple dark alert—check it out!
+    </div>
+  </div>
+</body>
+
+</html>

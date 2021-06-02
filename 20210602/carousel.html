@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"
+    integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="
+    crossorigin="anonymous"></script>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+    crossorigin="anonymous" />
+  <!-- google icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid w-100">
+    <!-- 主容器 -->
+    <div class="carousel slide  carousel-fade" data-bs-ride="carousel" id="lokiSlider">
+
+      <!-- 幻燈片區 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/600/?random=1" class="w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?random=2" class="w-100">
+          <div>
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/800/?random=3" class="w-100">
+          <!-- <h1>222</h1> -->
+        </div>
+      </div>
+
+      <!-- 控制項 -->
+      <a href="#lokiSlider" class="carousel-control-prev text-decoration-none" data-bs-slide="prev">
+        <i class="fas fa-arrow-circle-left text-danger"></i>
+      </a>
+      <button class="carousel-control-next" data-bs-target="#lokiSlider" data-bs-slide="next">
+        <span class="material-icons text-success">switch_right</span>
+      </button>
+
+      <!-- 指示器 -->
+      <!-- <div class="carousel-indicators">
+        <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#lokiSlider" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#lokiSlidr" data-bs-slide-to="2"></button>
+      </div> -->
+      <ul class="carousel-indicators">
+        <li data-bs-target="#lokiSlider" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#lokiSlider" data-bs-slide-to="1"></li>
+        <li data-bs-target="#lokiSlider" data-bs-slide-to="2"></li>
+      </ul>
+    </div>
+
+
+  </div>
+
+
+
+</body>
+
+</html>

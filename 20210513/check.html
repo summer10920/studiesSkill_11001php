@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="camp" id="lokiLabel1A" name="likes[]">
+      <label class="form-check-label" for="lokiLabel1A">範例A</label>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="camp" id="lokiLabel1B" name="likes[]" disabled>
+      <label class="form-check-label" for="lokiLabel1B">範例A</label>
+    </div>
+
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="camrea" id="lokiLabel2A" checked name="likes[]">
+      <label class="form-check-label" for="lokiLabel2A">範例B</label>
+    </div>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="camrea" id="lokiLabel2B" checked name="likes[]" disabled>
+      <label class="form-check-label" for="lokiLabel2B">範例B</label>
+    </div>
+    <!-- form-switch 外觀效果對 radio 也適用 -->
+  </div>
+
+
+  <hr>
+
+  <div class="container mt-5">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="lokiLabel3" disabled>
+      <label class="form-check-label" for="lokiLabel3">薛丁格的選擇框</label>
+    </div>
+    <script>
+      document.getElementById("lokiLabel3").indeterminate = true;
+    </script>
+  </div>
+
+
+  <form action="api.php" method="post">
+    <div class="container mt-5">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="camp" id="lokiLabel1" name="likes[]">
+        <label class="form-check-label" for="lokiLabel1">露營</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="camrea" id="lokiLabel2" checked name="likes[]">
+        <label class="form-check-label" for="lokiLabel2">攝影</label>
+      </div>
+    </div>
+
+    <!-- <input type="submit" value="send"> -->
+  </form>
+</body>
+
+</html>

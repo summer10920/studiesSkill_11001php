@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+</head>
+
+<body>
+
+  <form class="container mt-3 lokiValidation" novalidate>
+    <div class="mb-3">
+      <label for="lokiLabelB1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="lokiLabelB1" name="dataE" required value="loki@gmail.com">
+      
+    </div>
+    <div class="mb-3 position-relative">
+      <label for="lokiLabelB2" class="form-label">Password</label>
+      <input type="password" class="form-control" id="lokiLabelB2" name="dataP" required>
+      <div class="valid-tooltip">
+        正確
+      </div>
+      <div class="invalid-tooltip">
+        錯誤
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <hr>
+
+  <form class="container mt-3 lokiValidation" novalidate>
+    <div class="mb-3">
+      <label for="lokiLabelA1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="lokiLabelA1" name="dataE" required>
+      <div class="valid-feedback">
+        Looks Good!
+      </div>
+      <div class="invalid-feedback">
+        Not Good!!
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="lokiLabelA2" class="form-label">Password</label>
+      <input type="password" class="form-control" id="lokiLabelA2" name="dataP" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <script>
+    document.querySelectorAll('.lokiValidation').forEach(function (nod) {  //找到所有持有指定 class 之各項元素
+      nod.addEventListener('submit', function (event) { //監測 submit 時，做以下事情
+        if (!this.checkValidity()) { //如果這個元素的 checkValidity 為 false，代表驗證不通過
+          event.preventDefault(); //取消 submit 的 event 預設行為
+          event.stopPropagation(); //取消 submit 當下的點擊或其他影響事件
+        }
+        this.classList.add('was-validated'); //顯示驗證文字結果，出現之場合看個人需求
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+
+  <div class="container">
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="lokiName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="lokiName" required>
+      </div>
+      <div class="col-md-6">
+        <label for="lokiPWD" class="form-label">Password</label>
+        <input type="password" class="form-control" id="lokiPWD" required>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () { // 另一種 document.ready 的方法
+      document.querySelector("#lokiName").oninvalid = function () {
+        //當進行驗證事件時，如果不通過在指定物件變數獲得 false，顯示自訂提示字
+        if (!this.validity.valid) this.setCustomValidity("你沒名字嗎？");
+      }
+      document.querySelector("#lokiName").oninput = function () {
+        //當使用者進行編寫時，清除提示字。將不再顯示輸出
+        this.setCustomValidity("");
+      }
+
+      //本身還是會有基本的 text 不留白的檢查
+      document.querySelector("#lokiPWD").oninput = function () {
+        //當使用者進行編寫時，進行另一種正規檢查而更改提示字
+        this.setCustomValidity("");
+        let mystr = new RegExp('\\d{4}$');
+        if (!mystr.test(this.value)) this.setCustomValidity("只能 4 個數字");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

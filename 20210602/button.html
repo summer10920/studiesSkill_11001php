@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js" integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw==" crossorigin="anonymous"></script>
+
+  <style>
+    input[type=submit].btn-outline-warning:hover {
+      color: #fff !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container my-3">
+
+    <a href="http://www.google.com" class="btn btn-info text-white">Google</a>
+    <a href="http://www.google.com" class="btn btn-info text-white disabled">Google</a>
+    <a href="http://www.google.com" class="btn btn-info text-white" style="pointer-events: none;">Google</a>
+
+    <div class="btn btn-secondary">DIV</div>
+
+    <button type="button" class="btn btn-danger">Primary</button>
+    <button type="button" class="btn btn-outline-danger">Primary</button>
+
+    <input type="submit" value="送出" class="btn btn-warning text-white">
+    <!-- <input type="submit" value="送出" class="btn btn-outline-warning text-white"> -->
+    
+    <hr>
+    <!-- <div class="border border-danger">Send</div> -->
+    <div class="btn btn-outline-danger w-100">Send</div>
+
+    <hr>
+
+    <button class="btn btn-danger" data-bs-toggle="button">DEMO</button>
+    <button class="btn btn-danger">DEMO</button>
+    <button class="btn btn-danger active">DEMO</button>
+
+  </div>
+</body>
+
+</html>

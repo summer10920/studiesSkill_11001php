@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"
+    integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container w-75">
+    <div id="Slider" class="carousel slide" data-bs-ride="carousel">
+      <!-- 幻燈片區 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/600/?random=1" class="w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?random=2" class="w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?random=3" class="w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#Slider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#Slider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

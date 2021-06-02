@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="../20210505/plugins/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div class="accordion accordion-flush" id="bigBox">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#lokiA">Item #1</button>
+        </h2>
+        <div id="lokiA" class="accordion-collapse collapse" data-bs-parent="#bigBox">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet. A
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#lokiB">Item #2</button>
+        </h2>
+        <div id="lokiB" class="accordion-collapse collapse show" data-bs-parent="#bigBox">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet. B
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#lokiC">Item #3</button>
+        </h2>
+        <div id="lokiC" class="accordion-collapse collapse" data-bs-parent="#bigBox">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet. C
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
