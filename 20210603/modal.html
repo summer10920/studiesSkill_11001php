@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"
+    integrity="sha512-DSdiuNZtfUhehZHXtit9Sa/83i06YSnvT8Js8drwdkVCDMk3JwpIxdhf2oRUByUDB3wguN2iAzoTNfxFAuqGyA=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- open ModalA -->
+  <a class="btn btn-primary" data-bs-toggle="modal" href="#lokiModalA">Open lokiModalA</a>
+
+  <!-- ModalA -->
+  <div class="modal" id="lokiModalA">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <!-- close ModalA open ModalB -->
+          <a class="btn btn-primary" data-bs-toggle="modal" href="#lokiModalB" data-bs-dismiss="modal">Open lokiModalB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ModalB -->
+  <div class="modal fade" id="lokiModalB">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <a class="btn btn-primary" data-bs-toggle="modal" href="#lokiModalA" data-bs-dismiss="modal">lokiModalA</a>
+          <a class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <hr>
+
+  <!-- Button trigger modal -->
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lokiModal">Button</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="lokiModal" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum inventore nihil veritatis ratione nobis nulla
+          temporibus dolore, nesciunt alias quo, eligendi qui recusandae? Quis maiores consequatur quibusdam repellendus
+          ipsum. Nemo voluptates, explicabo nulla architecto labore officiis laboriosam deserunt officia facilis vel
+          pariatur fuga quidem voluptate eum. Magni rerum repellendus molestiae.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum inventore nihil veritatis ratione nobis nulla
+          temporibus dolore, nesciunt alias quo, eligendi qui recusandae? Quis maiores consequatur quibusdam repellendus
+          ipsum. Nemo voluptates, explicabo nulla architecto labore officiis laboriosam deserunt officia facilis vel
+          pariatur fuga quidem voluptate eum. Magni rerum repellendus molestiae.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum inventore nihil veritatis ratione nobis nulla
+          temporibus dolore, nesciunt alias quo, eligendi qui recusandae? Quis maiores consequatur quibusdam repellendus
+          ipsum. Nemo voluptates, explicabo nulla architecto labore officiis laboriosam deserunt officia facilis vel
+          pariatur fuga quidem voluptate eum. Magni rerum repellendus molestiae.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum inventore nihil veritatis ratione nobis nulla
+          temporibus dolore, nesciunt alias quo, eligendi qui recusandae? Quis maiores consequatur quibusdam repellendus
+          ipsum. Nemo voluptates, explicabo nulla architecto labore officiis laboriosam deserunt officia facilis vel
+          pariatur fuga quidem voluptate eum. Magni rerum repellendus molestiae.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum inventore nihil veritatis ratione nobis nulla
+          temporibus dolore, nesciunt alias quo, eligendi qui recusandae? Quis maiores consequatur quibusdam repellendus
+          ipsum. Nemo voluptates, explicabo nulla architecto labore officiis laboriosam deserunt officia facilis vel
+          pariatur fuga quidem voluptate eum. Magni rerum repellendus molestiae.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

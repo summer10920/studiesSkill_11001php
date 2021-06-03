@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../20210505/plugins/bootstrap.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"
+    integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="m-5">
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#lokiDemo1">Touch Me</a>
+    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#lokiDemo1">Touch Me Too</button>
+  </p>
+
+  <div class="collapse" id="lokiDemo1">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
+      activates the relevant trigger.
+    </div>
+  </div>
+
+  <hr>
+
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href=".lokiDemoA">Toggle A</a>
+    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target=".lokiDemoB">Toggle B</button>
+    <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target=".lokiDemoAll">Toggle A+B</button>
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse lokiDemoA lokiDemoAll">
+        <div class="card card-body">A Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, debitis!</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="collapse lokiDemoB lokiDemoAll">
+        <div class="card card-body">B Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eaque!
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
