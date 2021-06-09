@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泰山渡假飯店 - 來去深山住一晚</title>
+  <link rel="shortcut icon" href="media/favicon.ico">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- font icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+  <!-- bootstrap + custom css -->
+  <link rel="stylesheet" href="plugin/bootstrap.min.css">
+  <link rel="stylesheet" href="plugin/custom.css">
+  <script src="plugin/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- 廣告輪播區 -->
+  <section id="lokiSlider" class="carousel slide carousel-fade" data-bbbbbs-ride="carousel">
+    <!-- 指示器 -->
+    <div class="carousel-indicators">
+      <button data-bs-target="#lokiSlider" data-bs-slide-to="0" class="active"></button>
+      <button data-bs-target="#lokiSlider" data-bs-slide-to="1"></button>
+      <button data-bs-target="#lokiSlider" data-bs-slide-to="2"></button>
+      <button data-bs-target="#lokiSlider" data-bs-slide-to="3"></button>
+    </div>
+    <!-- 輪播對象 -->
+    <div class="carousel-inner">
+      <div class="carousel-item vh-100 active">
+        <img src="https://picsum.photos/1920/1080/?random=1" class="d-block w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center position-absolute top-0 bottom-0">
+          <h1>泰山渡假飯店 您的唯一首選</h1>
+          <p class="d-none d-md-block">忙碌的生活中，你有多久沒有好好的考賞自己呢？放慢腳步，來泰山好好度假吧</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=2" class="d-block w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center position-absolute top-0 bottom-0">
+          <h1>泰山咖啡廳 世界聞名而來</h1>
+          <p class="d-none d-md-block">泰山特產咖啡精選淬鍊而成，凡住宿者每人免費請你喝經典咖啡下午茶一份</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=3" class="d-block w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center position-absolute top-0 bottom-0">
+          <h1>寵愛有你 婚宴專案特惠</h1>
+          <p class="d-none d-md-block">本月活動喜宴專案滿10桌送一主桌，滿25桌再送沖繩雙人蜜月來回機票</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=4" class="d-block w-100 h-100">
+        <div class="carousel-caption d-flex flex-column justify-content-center position-absolute top-0 bottom-0">
+          <h1>外燴商餐 美食饗宴</h1>
+          <p class="d-none d-md-block">全台最豐富的國內外文化餐飲美食，與先進的視聽投影設備與企劃小組，歡迎商約洽談</p>
+        </div>
+      </div>
+    </div>
+    <!-- 控制鍵 -->
+    <button class="carousel-control-prev" data-bs-target="#lokiSlider" data-bs-slide="prev">
+      <span class="material-icons" style="font-size:2.5rem">skip_previous</span>
+    </button>
+    <button class="carousel-control-next" data-bs-target="#lokiSlider" data-bs-slide="next">
+      <span class="loki-icon">skip_next</span>
+    </button>
+  </section>
+
+  <!-- 房型介紹區 -->
+  <section id="lokiRoom" class="container py-5">
+    <header class="text-center">
+      <h2 class="text-warning mb-4">房型介紹</h2>
+      <nav class="nav nav-tabs justify-content-around flex-nowrap">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roomA">行政本館</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomB">雙幕川館</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomC">繪圖湯屋</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomPrice">價目表</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomRule">訂房須知</button>
+      </nav>
+    </header>
+    <article class="tab-content py-5">
+      <div class="row tab-pane fade show active" id="roomA">
+        <p class="text-muted text-center">
+          溫馨典雅的行政本館，給您簡約的度假享受。<br>
+          使用大片落地窗，採光極佳，每房皆設有觀景陽台，讓您遠眺高山、與大自然一親芳澤。
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/deeb2b" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">溫馨雙人房<small class="text-muted float-end">1 大床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/deeb2b" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">溫馨雙人房<small class="text-muted float-end">1 大床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/deeb2b" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">溫馨雙人房<small class="text-muted float-end">1 大床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row tab-pane fade" id="roomB">
+        <p class="text-muted text-center">
+          雙幕川館又稱小木屋，房外種植有柏樹，每房皆為獨棟式小屋設計。<br>
+          打開房門就見到綠油油的寬廣草地，三五好友坐在房前的石桌上，聊天談心，呼吸一口大自然最新鮮的空氣，是最愜意的享受。
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/574f55" class="card-img-top">
+            <div class="card-body">
+              <h5>雙幕川館</h5>
+              <p class="card-text">溫馨雙人房<small class="text-muted float-end">1 大床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/574f55" class="card-img-top">
+            <div class="card-body">
+              <h5>雙幕川館</h5>
+              <p class="card-text">精緻雙人房<small class="text-muted float-end">2 小床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row tab-pane fade" id="roomC">
+        <p class="text-muted text-center">
+          每房皆為獨棟式小屋設計，鋪設木質地板，浪漫典雅。<br>
+          房內設有溫泉浴槽，私享您的奢華溫泉浴時光。
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/60b84f" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋</h5>
+              <p class="card-text">溫馨雙人房<small class="text-muted float-end">1 大床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/60b84f" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋</h5>
+              <p class="card-text">精緻雙人房<small class="text-muted float-end">2 小床 | 6.5 坪</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="https://fakeimg.pl/300x200/60b84f" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋</h5>
+              <p class="card-text">親子四人房<small class="text-muted float-end">2 大床 | 8 坪</small></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="roomPrice">
+        <div class="w-100">
+          <h5 class="text-warning">[ 行政本館 ]</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr class="alert-warning">
+                <th>房型</th><th>平日</th><th>假日</th><th>連續國定假日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>溫馨雙人房</th><td>NT3000</td><td>NT3000</td><td>NT3000</td></tr>
+              <tr><th>精緻雙人房 </th><td>NT3000</td><td>NT3000</td><td>NT3000</td></tr>
+              <tr><th>親子四人房 </th><td>NT3000</td><td>NT3000</td><td>NT3000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="roomRule">.R..</div>
+    </article>
+  </section>
+
+
+  <!-- 頁尾區 -->
+  <footer class="bg-dark text-muted text-center py-3">
+    <small>
+      泰山職業訓練中心課程教材編譯<br>
+      copyright &copy; <span class="text-warning">洛奇數位設計</span>. all rights reserved
+    </small>
+    <div id="lokiArrow" class="position-fixed">
+      <a href="#" class="btn btn-warning text-white rounded-circle p-2 border-0">
+        <i class="fas fa-chevron-up"></i>
+      </a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
