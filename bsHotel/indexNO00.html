@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泰山渡假飯店 - 來去深山住一晚</title>
+  <link rel="shortcut icon" href="media/favicon.ico">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- font icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+  <!-- bootstrap + custom css -->
+  <link rel="stylesheet" href="plugin/bootstrap.min.css">
+  <link rel="stylesheet" href="plugin/custom.css">
+  <script src="plugin/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+
+  <!-- 廣告輪播區 -->
+  <section id="mybubumyCarl" class="carousel slide carousel-fade" data-bs-ride="carouselbroken">
+    <!-- 指示器 -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mybubumyCarl" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mybubumyCarl" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mybubumyCarl" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mybubumyCarl" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <!-- 輪播對象 -->
+    <div class="carousel-inner">
+      <div class="carousel-item vh-100 active">
+        <img src="https://picsum.photos/1920/1080/?random=1" class="d-block w-100 h-100 mx-auto"
+          style="right:-9999 ;left:-9999 ">
+        <!-- <img src="..." class="d-block w-100 h-100" alt="..."> -->
+        <div class="carousel-caption position-absolute top-0 bottom-0 d-flex flex-column justify-content-center">
+          <h1>泰山渡假飯店 您的唯一首選</h1>
+          <p class="d-none d-md-block">忙碌的生活中，你有多久沒有好好的考賞自己呢？放慢腳步，來泰山好好度假吧</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=2" class="d-block w-100 h-100  mx-auto"
+          style="right:-9999 ;left:-9999 ">
+        <div class="carousel-caption position-absolute top-0 bottom-0 d-flex flex-column justify-content-center">
+          <h1>泰山咖啡廳 世界聞名而來</h1>
+          <p class="d-none d-md-block">泰山特產咖啡精選淬鍊而成，凡住宿者每人免費請你喝經典咖啡下午茶一份</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=3" class="d-block w-100 h-100  mx-auto"
+          style="right:-9999 ;left:-9999 ">
+        <div class="carousel-caption position-absolute top-0 bottom-0 d-flex flex-column justify-content-center">
+          <h1>寵愛有你 婚宴專案特惠</h1>
+          <p class="d-none d-md-block">本月活動喜宴專案滿10桌送一主桌，滿25桌再送沖繩雙人蜜月來回機票</p>
+        </div>
+      </div>
+      <div class="carousel-item vh-100">
+        <img src="https://picsum.photos/1920/1080/?random=4" class="d-block w-100 h-100  mx-auto"
+          style="right:-9999 ;left:-9999 ">
+        <div class="carousel-caption position-absolute top-0 bottom-0 d-flex flex-column justify-content-center">
+          <h1>外燴商餐 美食饗宴</h1>
+          <p class="d-none d-md-block">全台最豐富的國內外文化餐飲美食，與先進的視聽投影設備與企劃小組，歡迎商約洽談</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mybubumyCarl" data-bs-slide="prev">
+      <i class="fas fa-angle-double-left fa-2x"></i>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mybubumyCarl" data-bs-slide="next">
+      <i class="fas fa-angle-double-right fa-2x"></i>
+    </button>
+  </section>
+
+  <!-- 空間介紹 -->
+  <section id="mybubumyRoom" class="container py-5">
+    <header class="text-center">
+      <h2 class="text-warning mb-4">房型介紹</h2>
+      <nav class="nav nav-tabs justify-content-around flex-nowrap">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#roomA">行政本館</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomB">雙幕川館</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomC">繪圖湯屋</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomPrice">價目表</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roomRule">訂房須知</button>
+      </nav>
+    </header>
+    <article class="tab-content py-5">
+      <div class="row tab-pane fade show active" id="roomA">
+        <p class="text-muted text-center">溫馨典雅的行政本館，給您簡約的度假享受。<br>
+          使用大片落地窗，採光極佳，每房皆設有觀景陽台，讓您遠眺高山、與大自然一親芳澤。
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomA1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">
+                溫馨雙人房
+                <samll class="text-muted float-end">1 大床 | 6.5</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomA2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">
+                精緻雙人房
+                <samll class="text-muted float-end">1 大床 | 10.5 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomA3.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>行政本館</h5>
+              <p class="card-text">
+                親子四人房
+                <samll class="text-muted float-end">2 大床 | 12 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="row tab-pane fade " id="roomB">
+        <p class="text-muted text-center">雙幕川館位於擁有大量的綠地腹地花園，房外種植有柏樹，每房皆為獨棟湯屋設計。<br>
+          打開房門就見到綠油油的寬廣草地，呼吸一口大自然最新鮮的空氣，三五好友一起夜晚裡賞月觀星，聊天談心，是最愜意的享受。
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomB1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>雙幕川館</h5>
+              <p class="card-text">
+                溫馨雙人房
+                <samll class="text-muted float-end">1 大床 | 6.5 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomB2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>雙幕川館</h5>
+              <p class="card-text">
+                精緻雙人房
+                <samll class="text-muted float-end">1 大床 | 10.5 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row tab-pane fade " id="roomC">
+        <p class="text-muted text-center">每房皆為獨棟式小屋設計，鋪設進口大理石防滑地板安心使用，浪漫典雅。<br>
+          房內設有溫泉浴槽，私享您的奢華溫泉浴時光。
+
+        </p>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomC1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋
+              </h5>
+              <p class="card-text">
+                溫馨雙人房
+                <samll class="text-muted float-end">8.5 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomC2.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋
+              </h5>
+              <p class="card-text">
+                精緻雙人房
+                <samll class="text-muted float-end">12.5 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+          <div class="card">
+            <img src="./media/roomC3.jpg" class="card-img-top">
+            <div class="card-body">
+              <h5>繪影湯屋
+              </h5>
+              <p class="card-text">
+                親子四人房
+                <samll class="text-muted float-end">附 1 大床 | 20 坪</samll>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="tab-pane fade flex-column" id="roomPrice">
+
+        <h5 class="text-warning pt-0">[ 行政本館 ]</h5>
+        <table class="table  table-sm mb-5 text-center">
+          <thead>
+            <tr class="alert-warning">
+              <th class="w-25">房型</th>
+              <th class="w-25">平日</th>
+              <th class="w-25">假日</th>
+              <th class="w-25">連續國定假日</th>
+            </tr>
+          </thead>
+          <tbody class="align-middle">
+            <tr>
+              <th>溫馨雙人房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+            <tr>
+              <th>精緻雙人房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+            <tr>
+              <th>親子四人房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <h5 class="text-warning pt-0">[ 雙幕川館 ]</h5>
+        <table class="table  table-sm mb-5 text-center">
+          <thead>
+            <tr class="alert-warning">
+              <th class="w-25">房型</th>
+              <th class="w-25">平日</th>
+              <th class="w-25">假日</th>
+              <th class="w-25">連續國定假日</th>
+            </tr>
+          </thead>
+          <tbody class="align-middle">
+            <tr>
+              <th>湖畔仙屋</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+            <tr>
+              <th>芬多森屋</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+        <h5 class="text-warning pt-0">[ 繪影湯屋 ]</h5>
+        <table class="table  table-sm mb-5 text-center">
+          <thead>
+            <tr class="alert-warning">
+              <th class="w-25">房型</th>
+              <th class="w-25">平日</th>
+              <th class="w-25">假日</th>
+              <th class="w-25">連續國定假日</th>
+            </tr>
+          </thead>
+          <tbody class="align-middle">
+            <tr>
+              <th>溫馨蜜月房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+            <tr>
+              <th>親子家庭房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+            <tr>
+              <th>豪華尊爵房</th>
+              <td>NT3000</td>
+              <td>NT3000</td>
+              <td>NT3000</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="tab-pane fade" id="roomRule">
+        <h3 class="text-end border-bottom border-warning">入住須知</h3>
+        <h5 class="text-warning">[ 飯店設備 ]</h5>
+        <p class="mb-5">
+          客房無線網路、有線第四台、自助洗衣機、免費烘乾機、免費停車場
+        </p>
+        <h5 class="text-warning">[ 入住須知 ]</h5>
+        <p class="mb-5">
+          進房時間（Check In ) 時間為 15:00 以後；退房時間（Check
+          Out）時間為 11:00 以前。<br>
+          住宿時請攜帶本人身分證正本、駕照以利核對。<br>
+          一般住宿附贈早餐、SPA 券（依住宿房型開立），特殊專案依專案條件辦理。<br>
+          超過退房時間一個小時將以一個小時 200 元計費，超過半個小時將以一個小時計算。 <br>
+          請注意住宿人數勿超過客房設定之人數，若有超過客房設定人數，飯店有權拒絕入住。
+        </p>
+        <h5 class="text-warning">[ 平假日定義 ]</h5>
+        <p class="mb-5">
+          平日時間：星期日~星期五；假日時間：星期六、連續假日結束前一日，依飯店公告為準。
+        </p>
+        <h5 class="text-warning">[ 加人服務 ]</h5>
+        <p class="mb-5">
+          本飯店繪圖湯屋房型提供加人服務（含軟墊、備品、早餐、溫泉 SPA 券），<br>
+          每加一人 NT$600（春節期間不適用）。
+        </p>
+        <h5 class="text-warning">[ 其他注意事項 ]</h5>
+        <p class="mb-5">
+          為維護住宿品質，室內空間全面禁菸，禁止攜帶貓狗等寵物入住，如經查獲加收清潔費 5000 元。<br>
+          為維護公共及個人安全，禁止在房間內烹煮食物，或攜帶瓦斯、電磁爐等同性質用具，敬請房客務必配合。<br>
+          客房地面為木質地板，請勿擅自移動房內傢俱，如發現自行搬動客房家具造成木質地面損傷，需付損毁費用。<br>
+          房型擺設僅供參考，以實體房間為主。<br>
+          免費停車場（僅供免費停車，不負保管之責）。<br>
+          行政本館及雙幕川館內衛浴設備皆為一般熱水，如需使用溫泉需至戶外大眾池或改訂繪圖湯屋房型。
+        </p>
+        <h3 class="text-right border-bottom border-warning ">官網訂房規範</h3>
+        <p class="small mb-5 text-muted">- 僅適用官網訂房，專案如有特殊需求，依專案為主</p>
+        <h5 class="text-warning">[ 線上訂房須知 ]</h5>
+        <p class="mb-5">
+          線上訂房交易價格均已含營業稅及服務費，若您選擇線上刷卡，交易成功後將由您的信用卡帳戶直接扣款。<br>
+          線上訂房不接受國民旅遊卡刷卡訂房，若需使用國民旅遊卡訂房請直接電洽櫃台辦理。
+        </p>
+
+        <h5 class="text-warning">[ 延遲入住手續 ]</h5>
+        <p class="mb-5">
+          若您在住宿當日，因塞車或其他的因素有所耽擱，無法在當日下午六點以前辦理住房手續，請您先以電話聯繫，否則飯店將視為您當日取消訂房，恕不退費。
+        </p>
+
+        <h5 class="text-warning">[ 更改入住日期 ]</h5>
+        <p class="mb-5">
+          訂房後如欲更改訂房日期，請電話聯絡協助處理。<br>
+          同一筆訂單限更改一次，且更改後的訂單恕不接受退房，否則視同取消訂房，依取消訂房規範處理。<br>
+          如更改後訂單金額大於原訂單金額，旅客需現場另行支付差額；如更改後金額小於原訂單金額，恕不退還差額。
+        </p>
+
+        <h5 class="text-warning">[ 取消訂房 ]</h5>
+        <p class="mb-5">
+          取消訂房將依以下規範酌收定金，請特別注意：<br>
+          住宿日 當日 取消訂房，扣定金總金額 100%<br>
+          住宿日 1 天前（不含當日）取消訂房，扣定金總金額 80%<br>
+          住宿日 2~3 天前（不含當日）取消訂房，扣定金總金額 70%<br>
+          住宿日 4~6 天前（不含當日）取消訂房，扣定金總金額 60%<br>
+          住宿日 7~9 天前（不含當日）取消訂房，扣定金總金額 50%<br>
+          住宿日 10~13 天前（不含當日）取消訂房，扣定金總金額 30%<br>
+          住宿日 14 天前（不含當日）取消訂房，扣除匯款手續費後，剩餘定金退還。<br>
+          線上訂房若有需求取消，請直接與我們「電話」聯繫進行取消訂房。<br>
+          若您使用信用卡付款，我們將由系統進行刷退動作；若您使用臨櫃匯款或 ATM 轉帳，請您傳真訂房者之任一銀行存摺封面至 089-515026。
+        </p>
+
+        <h5 class="text-warning">[ 特殊因素之退房處理 ]</h5>
+        <p class="mb-5">
+          若因天然災害等不可抗拒之因素（如地震、颱風等，以飯店所在地縣市政府公告為準）無法如期前往住宿<br>
+          請於原訂住宿日３日（含當日）內與飯店之訂房中心連絡改期（得保留 6 個月）或是辦理退費。
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 服務設施 -->
+  <section id="mybubumyFacility" class="containter py-5">
+    <header class="text-center">
+      <!-- 主題  -->
+      <h2 class="text-warning mb-4">服務設施</h2>
+    </header>
+    <!-- 設計內容 -->
+    <article class="py-5">
+      <ul class="row gy-4 list-unstyled">
+        <li class="col-12 col-lg-6">
+          <!-- 單一圖文 -->
+          <div class="row gy-4 align-items-center">
+            <img class="col-sm-6 " src="https://fakeimg.pl/400x400">
+            <div class="col-sm-6 ">
+              <h5>戶外海景游泳池</h5>
+              <p class="pb-3 border-bottom border-warning">
+                提供佔地面積1000坪的戶外大型游泳池，躺臥在優懶的助曬椅上，盡情享受陽光空氣與水的度假時光。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-lg-6">
+          <!-- 單一圖文 -->
+          <div class="row gy-4 align-items-center">
+            <img class="col-sm-6" src="https://fakeimg.pl/400x400">
+            <div class="col-sm-6">
+              <h5>戶外海景游泳池</h5>
+              <p class="pb-3 border-bottom border-warning">
+                提供佔地面積1000坪的戶外大型游泳池，躺臥在優懶的助曬椅上，盡情享受陽光空氣與水的度假時光。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-lg-6">
+          <!-- 單一圖文 -->
+          <div class="row gy-4 align-items-center">
+            <img class="col-sm-6" src="https://fakeimg.pl/400x400">
+            <div class="col-sm-6">
+              <h5>戶外海景游泳池</h5>
+              <p class="pb-3 border-bottom border-warning">
+                提供佔地面積1000坪的戶外大型游泳池，躺臥在優懶的助曬椅上，盡情享受陽光空氣與水的度假時光。
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-lg-6">
+          <!-- 單一圖文 -->
+          <div class="row gy-4 align-items-center">
+            <img class="col-sm-6" src="https://fakeimg.pl/400x400">
+            <div class="col-sm-6">
+              <h5>戶外海景游泳池</h5>
+              <p class="pb-3 border-bottom border-warning">
+                提供佔地面積1000坪的戶外大型游泳池，躺臥在優懶的助曬椅上，盡情享受陽光空氣與水的度假時光。
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </section>
+  <!-- 頁尾區 -->
+  <footer class="bg-dark text-muted text-center py-3">
+    <small>
+      泰山職業訓練中心課程教材編譯<br>
+      copyright &copy; <span class="text-warning">MybubuMy數位設計</span>. all rights reserved
+    </small>
+    <div id="mybubumyArrow" class="position-fixed">
+      <a class="btn btn-warning text-white rounded-circle" href="#mybubumyCarl"><i
+          class="fas fa-angle-double-up fa-2x"></i></a>
+    </div>
+  </footer>
+</body>
+
+</html>

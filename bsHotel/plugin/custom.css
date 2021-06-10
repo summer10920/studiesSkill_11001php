@@ -98,7 +98,7 @@ body {
 #lokiRoom .nav-link.active {
   background-color: #ffc107;
   color: #fff3cd;
-  border:0;
+  border: 0;
 }
 
 #lokiRoom .nav-tabs,
@@ -106,12 +106,44 @@ body {
   border-bottom: 1px solid #ffc107;
 }
 
-#lokiRoom .tab-content>.active{
+#lokiRoom .tab-content>.row.active {
   display: flex;
 }
 
-#roomPrice th,
-#roomPrice td{
-  text-align: center;
-  vertical-align: middle;
+/************lokiFacility********/
+@media (min-width:992px) {
+  #lokiFacility li:nth-of-type(even) img {
+    order: 1;
+  }
+}
+
+#lokiFacility {
+  background:
+    radial-gradient(circle, transparent 40%, #ccc 70%),
+    linear-gradient(to right, #999, #333),
+    url("https://picsum.photos/1080/1080/?random=1");
+
+  background-blend-mode: multiply, screen;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  text-shadow: 2px 2px 10px black;
+}
+
+/************lokiFood***********/
+#lokiFood .accordion-button:not(.collapsed) {
+  background: #ffc107;
+  color: white !important;
+}
+
+#lokiFood small{
+  transform: rotate(-20deg) translate(-25%,-25%);
+  z-index: 999;
+}
+
+/***********lokiTrans*********/
+#lokiTrans iframe{
+  filter: grayscale(70%) brightness(30%);
 }
