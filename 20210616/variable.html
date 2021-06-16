@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let loki="A";
+    // let loki="B";
+
+    abc=123;
+
+    let l = 3;  // let =獨立變數  const 常態變數  var 全域變數  未宣告=>臨時變數，可透過delete 刪除指令
+    var v = 4;
+
+    var loki="123"; // var 因為全域，所以需注意重複宣告，或繼承別人
+
+    // function demo() {
+    //   let l = "A";
+    //   var v = "B";
+    //   console.log(l, v);
+    // }
+
+    if (1) {  // let 適合在{}內宣告，能保護自己內部也保護別人外部
+      let loki="AAA";
+      let l = "A";
+      var v = "B";
+      console.log(l, v);
+
+      console.log(loki);
+    }
+
+    console.log(l, v);
+    console.log(loki);
+
+
+
+    /***********************
+    var a=1;
+    var b=1;
+    c=1;
+    function test(){
+      var b=2;
+      c=2;
+      console.log(a,b,c);
+    }
+    console.log(a,b,c);
+    *************************/
+  </script>
+</body>
+
+</html>
