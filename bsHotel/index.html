@@ -23,34 +23,36 @@
 
 <body>
   <!-- 導覽列 -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">泰山度假飯店</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lokiNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="lokiNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="fas fa-bed me-2"></i>房型介紹</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-dumbbell me-2"></i>服務設施</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-utensils me-2"></i>餐飲美食</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-map-marker-alt me-2"></i>交通資訊</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-envelope me-2"></i>聯絡我們</a>
-          </li>
+  <header id="lokiMenu" class="bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">泰山度假飯店</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lokiNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="lokiNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#lokiRoom"><i class="fas fa-fw fa-bed me-2"></i>房型介紹</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lokiFacility"><i class="fas fa-fw fa-dumbbell me-2"></i>服務設施</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lokiFood"><i class="fas fa-fw fa-utensils me-2"></i>餐飲美食</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lokiTrans"><i class="fas fa-fw fa-map-marker-alt me-2"></i>交通資訊</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lokiContact"><i class="fas fa-fw fa-envelope me-2"></i>聯絡我們</a>
+            </li>
 
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <!-- 廣告輪播區 -->
   <section id="lokiSlider" class="carousel slide carousel-fade" data-bbbbbs-ride="carousel">
@@ -554,10 +556,10 @@
   </section>
 
   <!-- 聯絡我們 -->
-  <section id="lokiContact" class="py-5 bg-dark text-light">
+  <section id="lokiContact" class="py-5 bg-dark">
     <div class="container">
       <header class="h2 text-center text-warning mb-4">聯絡我們</header>
-      <form class="row py-5 gy-4">
+      <form class="row py-5 gy-4  text-light">
         <div class="col-12 col-md-6">
           <label for="dataUser" class="form-label">訪客姓名</label>
           <div class="input-group">
@@ -605,6 +607,23 @@
 
       </form>
     </div>
+    <article class="container-fluid bg-light py-5 text-center">
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <!-- AdsX3 -->
+        <a href="https://www.facebook.com/tsvts/" target="_blank" class="link-secondary m-3 p-3 border rounded">
+          <i class="fab fa-facebook-square fa-3x"></i><br>
+          泰山職業訓練場
+        </a>
+        <a href="https://tkyhkm.wda.gov.tw/Default.aspx" target="_blank">
+          <img src="https://ws.wda.gov.tw/001/Upload/308/sites/pagebackimage/366d4144-bdac-4a20-a1f2-b0846004efc0.png">
+        </a>
+        <a href="https://www.taiwanjobs.gov.tw/home109/index.aspx" target="_blank">
+          <img src="https://icmp-ws.chiayi.gov.tw/001/Upload/408/relpic/9352/408618/8e7e31cb-201c-4b6f-802f-920fb8f06e28@710x470.png"  alt="台灣就業通">
+        </a>
+      </div>
+
+
+    </article>
   </section>
 
   <!-- 頁尾區 -->

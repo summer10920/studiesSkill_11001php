@@ -147,3 +147,10 @@ body {
 #lokiTrans iframe{
   filter: grayscale(70%) brightness(30%);
 }
+
+/*********轉場*************/
+/* #lokiMenu .nav-link,
+#lokiRoom .nav-link{ */
+  .nav-link{
+  transition: 1s ease;
+}
