@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<script>
+  let aa = [123, 456]; // 直接將一個陣列資料，指定給aa
+  let bb = new Array(); //引用建構函式，獲得一個完整結構 指定給bb
+  bb.push(123, 456);
+
+  // console.log(aa,bb); 
+
+  let a2 = new Array();
+  a2[0] = [1, 3, 5];
+  a2.push([2, 4, 6]);
+  let b2 = [[1, 3, 5], [2, 4, 6]];
+  // console.log(a2, b2);
+
+
+  let cc = new Array();
+  for (let i = 1; i < 11; i++) cc.push(i);
+
+  let dd = ["A", "B", "C"]
+  // function showit(lokiVal, lokiIndex) {
+  //   // console.log(lokiVal, lokiIndex);
+  //   console.log(`item=${lokiIndex},value=${lokiVal}`);
+  // }
+  // dd.forEach(showit);
+
+  // dd.forEach(function (v, i) {  //匿名函式
+  //   console.log(`item=${i},value=${v}`);
+  // })
+
+  // dd.forEach((v, i) => {  //箭頭函式 ES6
+  //   console.log(`item=${i},value=${v}`);
+  // })
+
+  dd.forEach(v => {
+    console.log(`use forEach, value is ${v}`);
+  });
+
+  for (let i = 0; i < dd.length; i++) {
+    console.log(`use for Loop, value is ${dd[i]}`);
+  }
+
+  for (const v of dd) {  // 吐 value ，只適合array使用
+    console.log(`use for of, value is ${v}`);
+  }
+
+  for (const i in dd) { // 吐 key(index)， array & object 都可用
+    console.log(`user for in, value is ${dd[i]}`);
+  }
+
+  dd[50] = "D";
+  function clearEmpty(e) {
+    // 如果 要過濾(保留下來)回傳true
+    //if(e!="A") return true;  
+    return (e != "A");
+  }
+  let ee = dd.filter(clearEmpty);  // filiter會將clearEmpty所要保留的以array方式收集，可再安排一個變數接住它。
+
+
+  let animal = {
+    k:"這不是你的K",
+    'cat': 123,
+    dog: 456,
+    house: "AAA"
+  }; //JSON
+
+  console.log(animal.dog,animal['dog']);
+
+  
+
+  for (const k in animal){
+    // console.log(`user for in, key is ${k}, value is ${animal[k]}`);
+    // console.log(animal.k);  // 透過變數當作key去找東西時不可這樣寫，會誤會到屬性名為k的位置。
+    console.log(animal[k]);
+  }
+
+
+
+</script>

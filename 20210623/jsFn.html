@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<script>
+  const str = "Hello World";
+  const ary = [123, 456, 789];
+
+  a = '5';
+  b = 100;
+  // console.log('5' + 100); //105(X) 5100 (O)
+  // console.log(Number(a) + 3 + b, 3 + String(b)); //108,"3100"
+
+  Math.round(6.4) //捨入
+  Math.ceil(6.00001) // 無進
+  Math.floor(6.999999) //無捨
+
+  // Math.random() //  0 ~ 0.多
+  // Math.random()*15 //  0 ~ 14.多
+  // Math.floor(Math.random()*15) //  0 ~ 14 之整數
+
+
+  // 湊出可產生 35 ~ 67 整數的隨機公式
+  // 35 + (0 ~ 32)
+  35 + Math.floor(Math.random() * 33) // 0~32
+
+  // for (let i = 0; i < 100; i++) {
+  //   const value = 35 + Math.floor(Math.random() * 33);
+  //   if (value == 67 || value == 35) console.warn(value);
+  //   else if (value > 67 || value < 35) console.error(value);
+  //   else console.info(value);
+  // }
+
+  // 設計 rand(min,max) 之自訂函式，可回傳自訂範圍之隨機整數
+  function rand(min, max) {  // 35 ~ 67
+    return min + Math.floor(Math.random() * (max - min + 1));
+  }
+
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<script>
+  let now = Date(); // 只是從date()函式取回一個普通的文字串
+  let time = new Date();// 建構式，回傳時間物件供使用
+
+  let custime1 = new Date(2021, 11, 31, 23, 59, 59, 999);  //  月表示法 使用 0 ~ 11 代表 一月至十二月
+  let custime2 = new Date("2021-12-31T23:59:59");
+
+  /*
+  time.getFullYear() // 西元
+  time.getMonth() //年
+  time.getMonth()+1 //月
+  time.getDate() //日
+  time.getHours() //時
+  time.getMinutes() //分
+  time.getSeconds() //秒
+  time.getDay() // SUN ~ SAT == 0 ~ 6
+  */
+
+  const
+    tmin = time.getTime(),
+    tmax = custime2.getTime(),
+    betw = Math.floor((tmax - tmin) / 1000);
+  /* 98765 秒 => ? 天 ? 時 ? 分 ? 秒
+
+  5秒      98765%60
+
+  1646總分 Math.floor(98765/60) = 總時 + 分
+  26分     Math.floor(98765/60)%60 =>  反正小數點不影響到我的整數計算 ↓簡化↓
+          Math.floor(98765/60%60)                         
+
+  27總時  Math.floor(Math.floor(98765/60)/60) ↓簡化↓
+          Math.floor(98765/60/60) = 總天 + 時
+
+  1天    Math.floor(98765/60/60/24)
+  3時    Math.floor(98765/60/60%24)
+  */
+  let
+    bsec = betw % 60,
+    bmin = Math.floor(betw / 60 % 60),
+    bhur = Math.floor(betw / 60 / 60 % 24),
+    bday = Math.floor(betw / 60 / 60 / 24)
+
+  console.log(`距離跨年還剩下${bday}天${bhur}時${bmin}分${bsec}秒!!`);
+
+
+  //現在時間為time物件
+  // time.setDate(time.getDate()-7);
+
+  // time.setDate(31);
+
+
+
+</script>

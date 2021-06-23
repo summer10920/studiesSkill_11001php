@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<script>
+  // let str = "";
+  // for (let i = 0; i < 10; i++) {
+  //   str += i;
+  // }
+  // console.log(str);
+
+
+  /*
+    console.log(1);
+    console.log(4);
+    console.log(7);
+    console.log(10);
+
+    每次印i，i每次是1=>4=>7=>10，每次會變化+3 = 結論為 i 每回合都會i+3
+    這個迴圈只會跑四次
+    i一開始是1
+    
+    ans:
+    for (let i = 1; i <= 10; i += 3) console.log(i);
+  */
+
+
+  // console.log("2*1=2");
+  // console.log("2*2=4");
+  // console.log("2*3=6");
+  // console.log("2*4=8");
+  // console.log("2*5=10");
+  // console.log("2*6=12");
+  // console.log("2*7=14");
+  // console.log("2*8=16");
+  // console.log("2*9=18");
+  // console.log("3*1=3");
+  // console.log("3*2=6");
+  // // ...
+  // console.log("9*9=81");
+
+  /*
+  method 1
+  for (let i = 2; i < 10; i++)
+    for (let j = 1; j < 10; j++) console.log(`${i}*${j}=${i * j}`);
+
+  method 2
+  for (let i = 2, j = 1; i < 10; i++) { // 81次
+    // i=2,j=9
+    console.log(`${i}*${j}=${i * j}`);
+    if (j != 9) {
+      i = i - 1;
+      j++;
+    } // i=2,j=9
+    else {
+      j = 1;
+    }
+  } // i=3,j=9
+
+  method 3
+  for (let i = 2, j = 1; i < 10; j++) { // run 81次
+    console.log(`${i}*${j}=${i * j}`);
+    if (j == 9) i++, j = 0;
+  }
+  */
+  /*
+  let n=0,str="";
+  while (n<10) {
+    str+=n;
+    n++;
+  }
+  console.log(str);
+  */
+
+  /*
+  let n = 0, str = "";
+  do {
+    str += n;
+    n++;
+  } while (n<10)
+  */
+
+  /* do while vs while demo ATM
+
+  do{
+    請輸入ATM密碼
+  }while(YES?)
+  vs
+  請輸入ATM密碼
+  while(YES?){
+    請輸入ATM密碼
+  }
+  */
+
+  /* break continue return*/
+
+  /*
+  let n=0;
+  while(n<10){
+    n++;
+
+    if(n==4) continue; // 跳過這次迴圈
+    if(n==8) break; // 破壞這個迴圈
+    console.log(n);
+  }
+  console.log("END");
+  */
+
+
+  function parrot(say){
+    let n=3;
+    while(n>0){
+      console.log("阿~~!!");
+
+      if(say=="閉嘴") return;
+      console.log(say);
+      n--;
+    }
+  }
+
+
+
+</script>

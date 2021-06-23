@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const
+      height = 158,
+      money = 300,
+      face = 0;
+
+    if (height >= 170 && money >= 10000 && face) console.log("100分!");
+    else if (height >= 170 || money >= 10000 || face) console.log("60~99分!");
+    else console.log("0~59分!");
+
+    let aa = 2, bb = 6, cc = 2;
+    // if (aa == 1 && bb == 1 && cc == 1) console.log("豹子");
+    // else if (aa + bb + cc > 9) console.log("大");
+    // else console.log("小");
+    console.log(aa == 1 && bb == 1 && cc == 1 ? "豹子" : aa + bb + cc > 9 ? "大" : "小");
+
+    let day = 7;
+    // method 1
+    // let msg=(day<6)?("workday"):("holiday");
+    // let msg = day < 6 ? "Workday" : "Holiday";
+    // console.log("today is " + msg);
+
+    // method 2
+    // console.log("today is " + (day < 6 ? "Workday" : "Holiday"));
+
+    // method 3
+    console.log(`today is ${day < 6 ? "Workday" : "Holiday"}`);
+
+
+
+
+
+    // let today=1;
+    // if (today==1) {
+    //   console.log("MON Day!");
+    // } else if (today==2) {
+    //   console.log("TUE Day!!");
+    // } else{
+    //   console.log("Between WED and SUN!!");
+    // }
+    // console.log("Story END!!");
+  </script>
+</body>
+
+</html>
