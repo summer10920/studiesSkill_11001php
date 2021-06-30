@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件</title>
+</head>
+
+<body>
+  <input type="button" value="onclick" onclick="showit('有人按了這裡')">
+  <hr>
+  <input type="button" value="onclick Button" name="lokiName" id="demo" onclick="whatis(this)">
+  <input type="button" value="onmousedown Button" onmousedown="whatis(this)">
+  <input type="button" value="onmouseup Button" onmouseup="whatis(this)">
+  <input type="button" value="onmouseover Button" onmouseover="whatis(this)">
+  <input type="button" value="onmouseout Button" onmouseout="whatis(this)">
+  <input type="text" value="onchange" onchange="whatis(this)">
+  <input type="text" value="onblur" onblur="whatis(this)">
+  <input type="text" value="onfocus" onfocus="whatis(this)">
+  <hr>
+  <div id="fakeBtn"></div>
+  <script>
+    function showit(msg) {
+      console.log(msg);
+    }
+    function whatis(element) {
+      // console.log(element,document.getElementById("demo"));
+      // element.style.color = "red";
+      // element.style.fontSize = "1.5rem";
+      if (element.style.color == "red") element.style.color = null;
+      else element.style = "color:red;font-size:1.5rem";
+      console.log(`event on "${element.value}"`);
+    }
+    let fakebtn = document.getElementById("fakeBtn");
+    fakebtn.style = "display:inline;cursor:pointer;border:1px solid;";
+    fakebtn.textContent = "Button";
+    fakebtn.onclick = function (event) {
+      console.log(event);
+      // console.log(this, fakebtn);
+      whatis(this);
+    };
+
+    document.onkeydown = function (e) {
+      event.preventDefault(); // 將事件預定作業清除
+      console.log(`你按下了鍵盤${e.code}`);
+      console.log(e);
+    }
+
+
+  </script>
+</body>
+
+</html>

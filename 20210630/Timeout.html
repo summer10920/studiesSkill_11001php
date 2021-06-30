@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    const sec = 5 * 1000;
+
+    function delay() {
+      console.log("Bomb!!");
+    }
+
+    const lokiNum1 = setTimeout(delay, sec);
+    const lokiNum2 = setTimeout(delay, sec);
+    const lokiNum3 = setTimeout(delay, sec);
+    // console.log(lokiNum1,lokiNum2,lokiNum3);
+
+    clearTimeout(lokiNum1);
+    */
+
+    /*
+    const bomb = setTimeout(() => {
+      console.log("BOMB!!!");
+    }, 5000);
+    */
+
+    // const stop=setInterval(() => {
+    //   console.log("Hi!!");
+    // }, 1000);
+
+
+    let i = 0;
+    const lokiStop = setInterval(() => {
+      i++;
+      console.log(i);
+      if (i == 5) clearInterval(lokiStop);
+    }, 1000);
+  </script>
+</body>
+
+</html>

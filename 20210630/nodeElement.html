@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="theh1">Lorem ipsum dolor sit amet.</h1>
+  <ul id="theul">
+    <li class="list">apple</li>
+    <li>banana</li>
+    <li class="list">papaya</li>
+  </ul>
+  <input type="button" value="onclick Button" name="lokiName" id="theinput" onclick="whatis(this)" style="color:red;">
+  <script>
+    let nod = document.getElementById("theinput");
+    // nod.attributes();
+    // nod.setAttribute(name,value);
+    // nod.removeAttribute(name);
+  </script>
+
+
+  <div id="add">按這裡</div>
+
+  <script>
+    function addE() {
+      let btn = document.createElement("button");
+      btn.textContent = "A";
+      document.body.appendChild(btn);
+    }
+
+    document.getElementById("add").onclick = function () {
+      addE();
+    };
+  </script>
+
+
+</body>
+
+</html>

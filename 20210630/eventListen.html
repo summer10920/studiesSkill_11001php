@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="try" id="ock">
+
+
+  <script>
+    let btn = document.getElementById("ock");
+    btn.addEventListener('click', function () {
+      console.warn("this is click from listener");
+    });
+
+    function eventDo1() {
+      console.warn("this is event1 from listener");
+    }
+    function eventDo2() {
+      console.warn("this is event2 from listener");
+    }
+    btn.addEventListener('mouseover', eventDo1);
+    btn.addEventListener('mouseover', eventDo2);
+
+
+    function lokiClear(){
+      btn.removeEventListener('mouseover',eventDo1);
+    }
+
+
+  </script>
+</body>
+
+</html>
