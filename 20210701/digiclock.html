@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="digi.css">
+</head>
+
+<body>
+  <div class="digi">
+    <div id="ck1" class="mg1"></div>
+    <div id="ck2" class="mg2"></div>
+    <div class="mgd"></div>
+    <div id="ck3" class="mg3"></div>
+    <div id="ck4" class="mg4"></div>
+    <div class="mgd"></div>
+    <div id="ck5" class="mg5"></div>
+    <div id="ck6" class="mg6"></div>
+  </div>
+
+  <script>
+    const refresh = () => {
+      const nt = new Date();
+      const
+        nh = nt.getHours(), //15
+        nm = nt.getMinutes(), //39
+        ns = nt.getSeconds(); //50
+
+      const
+        nk1 = Math.floor(nh / 10),
+        nk2 = nh % 10,
+        nk3 = Math.floor(nm / 10),
+        nk4 = nm % 10,
+        nk5 = Math.floor(ns / 10),
+        nk6 = ns % 10;
+
+      document.getElementById("ck1").className = `mg${nk1}`;
+      document.getElementById("ck2").className = `mg${nk2}`;
+      document.getElementById("ck3").className = `mg${nk3}`;
+      document.getElementById("ck4").className = `mg${nk4}`;
+      document.getElementById("ck5").className = `mg${nk5}`;
+      document.getElementById("ck6").className = `mg${nk6}`;
+
+      // document.getElementsByClassName("mgd")[0].style.opacity = 1;
+      // document.getElementsByClassName("mgd")[1].style.opacity = 1;
+      // setTimeout(() => {
+      //   document.getElementsByClassName("mgd")[0].style.opacity = 0;
+      //   document.getElementsByClassName("mgd")[1].style.opacity = 0;
+      // }, 500);
+      document.querySelectorAll('.mgd').forEach(e => {
+        e.style.opacity = 1;
+        setTimeout(() => {
+          e.style.opacity = 0;
+        }, 500);
+      });
+      // setTimeout(refresh, 1000);
+    }
+    setInterval(refresh, 1000);
+    refresh();
+
+
+
+
+  </script>
+</body>
+
+</html>
