@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 100px;height: 100px;background: red;"></div>
+  <hr>
+  <input type="button" value="正方形" onclick="trans(this.value)">
+  <input type="button" value="圓形" onclick="trans(this.value)">
+  <input type="button" value="三角形" onclick="trans(this.value)">
+  <input type="text" value="#ff0000" onchange="trans(this.value)">
+
+  <script>
+    let mask = document.getElementsByTagName('div')[0];
+    let trans = who => {
+      switch (who) {
+        case '正方形':
+          mask.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
+          break;
+        case '圓形':
+          mask.style.clipPath = 'circle(50% at 50% 50%)';
+          break;
+        case '三角形':
+          mask.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+          break;
+        default:
+          mask.style.background = who;
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

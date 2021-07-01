@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+.myFull {
+  background-color: #0006;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.myContent {
+  position: relative;
+  cursor: pointer;
+}
+
+.material-icons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+}
+
+.material-icons:hover {
+  color: #333;
+}
+
+.myContent>img {
+  max-width: 500px;
+  max-height: 600px;
+  width: 90%;
+  margin: 5px auto;
+  display: block;
+}

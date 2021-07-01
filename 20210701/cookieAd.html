@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="ad.css">
+</head>
+
+<body>
+  <div class="myFull">
+    <div class="myContent">
+      <img src="ad.png">
+      <!-- <img src="https://fakeimg.pl/800x1000"> -->
+      <span class="material-icons">cancel</span>
+    </div>
+  </div>
+  <script>
+    document.getElementsByClassName("myFull")[0].onclick = function () {
+      this.style.display = "none";
+    }
+
+    document.getElementsByTagName("img")[0].onclick = () => {
+      open("https://shopee.tw/", "_self");
+    }
+
+    /*可查詢指定cookie的函式*/
+    function method1(name) { //loki
+      const ckary = document.cookie.split("; ");
+      const getval = ckary.find(e => name + "=" == e.substr(0, name.length + 1));
+      // console.log(getval);
+      // if (getval != undefined) return getval.split("=")[1];
+      // else return false;
+      return getval != undefined ? getval.split("=")[1] : false;
+    }
+    const method2 = name => {
+      const ckary = document.cookie.split("; ");
+      // let ckobj = new Object();
+      let ckobj = {};
+      ckary.forEach(e => {
+        const itemAry = e.split("=");// itemAry=[key,value]
+        ckobj[itemAry[0]] = itemAry[1];
+      });
+      return name in ckobj ? ckobj[name] : false;
+    }
+
+    const checkAd = method1("wasAd");
+    if (!checkAd) { // !false == 還沒看過廣告，所以要塞餅乾
+      let dd = new Date();
+      dd.setHours(23, 59, 59, 999);
+      document.cookie = "wasAd=yes;expires=" + dd.toUTCString();
+    } else document.getElementsByClassName("myFull")[0].remove();
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+  <!---------------------------------------------------------------------------->
+  <div style="width: 100px;height: 100px;background: red;" id="zone"></div>
+  <hr>
+  <input type="button" value="正方形" onclick="trans(this.value)">
+  <input type="button" value="圓形" onclick="trans(this.value)">
+  <input type="button" value="三角形" onclick="trans(this.value)">
+  <input type="text" value="#ff0000" onchange="trans(this.value)">
+
+  <script>
+    let mask = document.getElementById('zone');
+    let trans = who => {
+      switch (who) {
+        case '正方形':
+          mask.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
+          break;
+        case '圓形':
+          mask.style.clipPath = 'circle(50% at 50% 50%)';
+          break;
+        case '三角形':
+          mask.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+          break;
+        default:
+          mask.style.background = who;
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

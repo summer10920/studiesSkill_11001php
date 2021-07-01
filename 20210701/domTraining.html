@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 100px;height: 100px;background: red;" id="zone"></div>
+  <hr>
+  <input type="button" value="正方形" onclick="trans(this.value)">
+  <input type="button" value="圓形" onclick="trans(this.value)">
+  <input type="button" value="三角形" onclick="trans(this.value)">
+  <input type="text" value="#ff0000" onchange="color(this.value)">
+
+  <script>
+    let style = 'width: 100px;height: 100px;background: red;';
+    let clr = 'red';
+    let zone = document.getElementById('zone');
+    function trans(who) {
+      switch (who) {
+        case '正方形':
+          style = 'width: 100px;height: 100px;background: ' + clr + ';';
+          break;
+        case '圓形':
+          style = `width: 100px;height: 100px;border-radius: 50%;background: ${clr};`;
+          break;
+        case '三角形':
+          style = `width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid ${clr};`;
+          break;
+        default:
+          break;
+      }
+      zone.style = style;
+    }
+
+    function color(who) {
+      clr = who; //更新color變數的值
+      if (zone.style.background != "") zone.style.background = clr;
+      else zone.style.borderBottomColor = clr;
+    }
+  </script>
+</body>
+
+</html>
