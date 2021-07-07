@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="analogy.css">
   <script>
     const nt = new Date();
+    /*
     const
       ns = nt.getSeconds(),
       nm = nt.getUTCMinutes(),
@@ -18,38 +19,46 @@
       ss = ns * 6, //360度 有 60秒，每一秒代表6度，N秒=N*6
       sm = nm * 6 + ns * 0.1,  //30分30秒=180+3
       sh = nh * 30 + nm * 0.5 + ss * 0.5 / 60;//X點Y分Z秒 = 30*X + 30/60*Y + 0.5/60*Z
+    */
+    function getRo() {
+      const
+        ns = nt.getSeconds(),
+        nm = nt.getUTCMinutes(),
+        nh = nt.getHours();
+      return [ns * 6, nm * 6 + ns * 0.1, nh * 30 + nm * 0.5 + ns * 6 * 0.5 / 60];
+    }
 
     document.write(`
-    <style>
-      @keyframes js_move {
-        from {
-          transform: rotate(${ss}deg);
-        }
-
-        to {
-          transform: rotate(${ss + 360}deg);
-        }
-      }
-      @keyframes jm_move {
-        from {
-          transform: rotate(${sm}deg);
-        }
-
-        to {
-          transform: rotate(${sm + 360}deg);
-        }
-      }
-      @keyframes jh_move {
-        from {
-          transform: rotate(${sh}deg);
-        }
-
-        to {
-          transform: rotate(${sh} + 360}deg);
-        }
-      }
-    </style>
-    `);
+        <style>
+          @keyframes js_move {
+            from {
+              transform: rotate(${getRo()[0]}deg);
+            }
+    
+            to {
+              transform: rotate(${getRo()[0] + 360}deg);
+            }
+          }
+          @keyframes jm_move {
+            from {
+              transform: rotate(${getRo()[1]}deg);
+            }
+    
+            to {
+              transform: rotate(${getRo()[1] + 360}deg);
+            }
+          }
+          @keyframes jh_move {
+            from {
+              transform: rotate(${getRo()[2]}deg);
+            }
+    
+            to {
+              transform: rotate(${getRo()[2] + 360}deg);
+            }
+          }
+        </style>
+        `);
   </script>
 
 </head>
@@ -68,11 +77,35 @@
     <h3>animation + 雙DIV</h3>
   </div>
   <div class="circle">
+    <div class="jsec2"></div>
     <div class="jmin2"></div>
     <div class="jhur2"></div>
-    <div class="jsec2"></div>
     <h3>animation + 圖片表示</h3>
   </div>
+  <div class="circle">
+    <div class="jmin1 omin3"></div>
+    <div class="jhur1 ohur3"></div>
+    <div class="jsec1 osec3"></div>
+    <h3>animation + 中心偏移</h3>
+  </div>
+  <div class="circle">
+    <div class="jmin1 omin4"></div>
+    <div class="jhur1 ohur4"></div>
+    <div class="jsec1 osec4"></div>
+    <h3>Interval + 中心偏移</h3>
+  </div>
+  <script>
+    document.querySelector(".osec4").style.transform = "rotate(" + getRo()[0] + "deg)";
+    document.querySelector(".omin4").style.transform = "rotate(" + getRo()[1] + "deg)";
+    document.querySelector(".ohur4").style.transform = "rotate(" + getRo()[2] + "deg)";
+    setInterval(() => {
+      nt.setSeconds(nt.getSeconds() + 1);
+      document.querySelector(".osec4").style.transform = "rotate(" + getRo()[0] + "deg)";
+      document.querySelector(".omin4").style.transform = "rotate(" + getRo()[1] + "deg)";
+      document.querySelector(".ohur4").style.transform = "rotate(" + getRo()[2] + "deg)";
+    }
+      , 1000);
+  </script>
 </body>
 
 </html>

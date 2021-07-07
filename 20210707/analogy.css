@@ -2,9 +2,11 @@ body {
   margin: 0;
   background: #ccc;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .circle {
@@ -13,6 +15,8 @@ body {
   background: white;
   border-radius: 50%;
   position: relative;
+  margin: 10px;
+  flex: 0 0 auto;
 }
 
 h3 {
@@ -72,32 +76,61 @@ h3 {
 }
 
 .jhur2 {
-  width:16px;
+  width: 16px;
   height: 300px;
-  background: blue;
+  background: url('mh.png');
   position: absolute;
   left: 50%;
-  top: 25%;
-  margin-left: -5px;
+  margin-left: -8px;
+  animation: jh_move 43200s linear infinite;
 }
 
 .jmin2 {
-  width:16px;
+  width: 16px;
   height: 300px;
-  background: green;
+  background: url('mm.png');
   position: absolute;
   left: 50%;
-  top: 15%;
-  margin-left: -5px;
+  margin-left: -8px;
+  animation: jm_move 3600s linear infinite;
 }
 
 .jsec2 {
-  width:16px;
+  width: 16px;
   height: 300px;
-  background: red;
+  background: url('ms.png');
   position: absolute;
   left: 50%;
-  top: 5%;
-  margin-left: -2px;
+  margin-left: -8px;
+  animation: js_move 60s linear infinite;
+}
 
+.omin3 {
+  animation: jm_move 3600s linear infinite;
+  transform-origin: 50% calc(150px - 45px);
+  /* transform-origin: 50% calc(100% / 0.8 - 45px); */
+}
+
+.ohur3 {
+  animation: jh_move 43200s linear infinite;
+  transform-origin: 50% calc(150px - 75px);
+  /* transform-origin: 50% calc(100% / 0.6 - 75px); */
+}
+
+.osec3 {
+  animation: js_move 60s linear infinite;
+  transform-origin: 50% calc(150px - 15px);
+  /* transform-origin: 50% calc(100% - 15px); */
+}
+
+.omin4 {
+  transform-origin: 50% calc(100% / 0.8 - 45px);
+}
+
+.ohur4 {
+  transform-origin: 50% calc(100% / 0.6 - 75px);
+}
+
+.osec4 {
+  transform-origin: 50% calc(100% - 15px);
 }
