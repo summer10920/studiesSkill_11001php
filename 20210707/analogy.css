@@ -49,18 +49,21 @@ h3 {
   margin-left: -2px;
 
 }
+
 .zsec1 {
   width: 300px;
   height: 300px;
   animation: js_move 60s linear infinite;
   position: absolute;
 }
+
 .zmin1 {
   width: 300px;
   height: 300px;
   animation: jm_move 3600s linear infinite;
   position: absolute;
 }
+
 .zhur1 {
   width: 300px;
   height: 300px;
