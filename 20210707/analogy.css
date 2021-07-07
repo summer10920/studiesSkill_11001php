@@ -70,3 +70,34 @@ h3 {
   animation: jh_move 43200s linear infinite;
   position: absolute;
 }
+
+.jhur2 {
+  width:16px;
+  height: 300px;
+  background: blue;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  margin-left: -5px;
+}
+
+.jmin2 {
+  width:16px;
+  height: 300px;
+  background: green;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  margin-left: -5px;
+}
+
+.jsec2 {
+  width:16px;
+  height: 300px;
+  background: red;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  margin-left: -2px;
+
+}
