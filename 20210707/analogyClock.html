@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="analogy.css">
+  <script>
+    const nt = new Date();
+    const
+      ns = nt.getSeconds(),
+      nm = nt.getUTCMinutes(),
+      nh = nt.getHours();
+
+    const
+      ss = ns * 6, //360度 有 60秒，每一秒代表6度，N秒=N*6
+      sm = nm * 6 + ns * 0.1,  //30分30秒=180+3
+      sh = nh * 30 + nm * 0.5 + ss * 0.5 / 60;//X點Y分Z秒 = 30*X + 30/60*Y + 0.5/60*Z
+
+    document.write(`
+    <style>
+      @keyframes js_move {
+        from {
+          transform: rotate(${ss}deg);
+        }
+
+        to {
+          transform: rotate(${ss + 360}deg);
+        }
+      }
+      @keyframes jm_move {
+        from {
+          transform: rotate(${sm}deg);
+        }
+
+        to {
+          transform: rotate(${sm + 360}deg);
+        }
+      }
+      @keyframes jh_move {
+        from {
+          transform: rotate(${sh}deg);
+        }
+
+        to {
+          transform: rotate(${sh} + 360}deg);
+        }
+      }
+    </style>
+    `);
+  </script>
+
+</head>
+
+<body>
+  <div class="circle">
+    <div class="zmin1">
+      <div class="jmin1"></div>
+    </div>
+    <div class="zhur1">
+      <div class="jhur1"></div>
+    </div>
+    <div class="zsec1">
+      <div class="jsec1"></div>
+    </div>
+    <h3>animation + 雙DIV</h3>
+  </div>
+</body>
+
+</html>

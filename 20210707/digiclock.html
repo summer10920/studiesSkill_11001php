@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="digi.css">
+
 </head>
 
 <body>
-  <div class="digi">
+  <div class="digiImg">
     <div id="ck1" class="mg1"></div>
     <div id="ck2" class="mg2"></div>
     <div class="mgd"></div>
@@ -20,7 +24,6 @@
     <div id="ck5" class="mg5"></div>
     <div id="ck6" class="mg6"></div>
   </div>
-
   <script>
     const refresh = () => {
       const nt = new Date();
@@ -60,10 +63,33 @@
     }
     setInterval(refresh, 1000);
     refresh();
+  </script>
 
+  <div class="digiFont">
+    <p id="df-time">12:00:00</p>
+    <p id="df-date">1999-12-01 SUN</p>
+  </div>
+  <script>
+    const weekWord = ['SUN', 'MON', 'TUS', 'WED', 'THR', 'FRI', 'SAT'];
+    const newNum = num => num > 9 ? num : "0" + num;
 
+    const retime = () => {
+      const nt = new Date();
+      const
+        nh = nt.getHours(),
+        nm = nt.getMinutes(),
+        ns = nt.getSeconds(),
+        ny = nt.getFullYear(),
+        nmo = nt.getMonth(),
+        nd = nt.getDate(), //日
+        nw = nt.getDay(); //周幾
 
-
+      // document.getElementById("df-time").textContent="12:34:56";
+      document.querySelector("#df-time").textContent = `${newNum(nh)}:${newNum(nm)}:${newNum(ns)}`;
+      document.querySelector("#df-date").textContent = `${ny}-${newNum(nmo + 1)}-${newNum(nd)} ${weekWord[nw]}`;
+    }
+    setInterval(retime, 1000);
+    retime();
   </script>
 </body>
 
