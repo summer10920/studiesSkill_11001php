@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <style>
+    .hot {
+      color: red;
+    }
+
+    li:first {
+      background: #000;
+    }
+
+    body {
+      height: 500vh;
+    }
+  </style>
+
+</head>
+
+<body>
+  <script>
+    // $(document).ready(function () {  // 所指定的 DOM 生成 完成時
+    //   $("#four").css("color", "blue");
+    // });
+
+    // $(window).on("load", function () { //window event 當網頁 load 完成
+    //   $("#four").css("color", "blue");
+    // });
+  </script>
+  <div id="page">
+    <h1 id="header">HELLO WORLD</h1>
+    <script>
+      // document.querySelector("h1").onclick = function () {
+      //   console.log('click by js onclick object');
+      // }
+      $("h1")
+        .on("click", function () {
+          console.log('click by jq fn\'s on');
+        })
+        .click(function () {
+          console.log('click by jq fn\'s click');
+        })
+        .on("mouseenter", function () {
+          console.log('mouseenter by jq fn\'s on');
+        })
+        .mouseenter(function () {
+          console.log('mouseenter by jq fn\'s mouseenter');
+        });
+
+      // $("form").submit();
+      // $("h1").hover(function(){
+      //   console.log('hover by jq fn\'s hover');
+      // });
+
+
+
+    </script>
+    <h2>My ToDo List</h2>
+    <ul>
+      <!--  -->
+      <li id="one" class="hot">吃飯</li>
+      <li id="two" class="hot">睡覺</li>
+      <li id="three" class="hot">洗澡</li>
+      <li id="four">打東東</li>
+      <!--  -->
+    </ul>
+    <ul id="emtpy"></ul>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, minima?</p>
+  </div>
+  <img src="https://fakeimg.pl/100x100" title="fake1">
+  <img src="https://fakeimg.pl/200x200" title="fake2">
+  <hr>
+  <!--  -->
+  <nav id="hasP">
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+  </nav>
+  <!--  -->
+  <hr>
+  <input name="address" value="keelung">
+  <input type="text" name="uName" value="Loki">
+  <input type="email" name="uMail" value="loki@gmail.com">
+  <input type="password" name="uPWD" value="5566neverdie">
+
+</body>
+
+</html>
