@@ -59,19 +59,17 @@
       const pp = (arrow) => {
         if (arrow == 'up' && nowpage > 0) {
           nowpage--;
-          $(".im").hide();
-          $(`#ssaa${nowpage}`).show(); //小隊長
-          $(`#ssaa${nowpage + 1}`).show();
-          $(`#ssaa${nowpage + 2}`).show();
+          $(`#ssaa${nowpage}`).slideToggle('slow');
+          $(`#ssaa${nowpage + 3}`).slideToggle('slow');
         } else
           if (arrow == 'down' && nowpage < num - 3) {  //if num =10 ,then 未滿7
-            nowpage++;
-            $(".im").hide();
-            $(`#ssaa${nowpage}`).show();
-            $(`#ssaa${nowpage + 1}`).show();
-            $(`#ssaa${nowpage + 2}`).show();
+            $(`#ssaa${nowpage}`).slideToggle('slow'); //#0 swap
+            $(`#ssaa${nowpage + 3}`).slideToggle('slow'); // #3 swap
+            nowpage++; //#1
           }
       }
+
+      $("img[onclick^=pp]").css('cursor', 'pointer'); //添加CSS
 
       // var nowpage = 0, num = 0;
       // function pp(x) {
