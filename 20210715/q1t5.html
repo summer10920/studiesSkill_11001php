@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--正中央-->
+
+  <div style="width:100%; padding:2px; height:290px;">
+    <div id="mwww" loop="true" style="width:100%; height:100%;">
+      <div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
+    </div>
+  </div>
+  <script>
+    /* version by work */
+    $.getJSON("data.json", function (result) { //非同步，程式不會為了等待回應而停留在此
+      todo(result.q1t5);
+
+    });
+    const todo = (myjson) => {
+      if (myjson.length) //有圖片 就先初始1次出來
+        $("#mwww").html("<embed loop=true src='" + myjson[0] + "' style='width:99%; height:100%;'></embed>");
+
+      if (myjson.length > 1) { //圖片超過兩張，開始自動輪放
+        let now = 1;
+        setInterval(() => {
+          $("#mwww").html("<embed loop=true src='" + myjson[now] + "' style='width:99%; height:100%;'></embed>");
+          now = (now + 1) % myjson.length;
+        }, 3000);
+      }
+    }
+
+    /* version by exam
+    var lin = [
+      "media/01C01.gif",
+      "media/01C02.gif",
+      "media/01C03.gif",
+      "media/01C04.gif",
+      "media/01C05.gif",
+      "media/01C06.gif"
+    ];
+    var now = 0;
+    if (lin.length > 1) {
+      setInterval("ww()", 3000);
+      now = 0;
+      ww();
+    }
+    function ww() {
+      $("#mwww").html("<embed loop=true src='" + lin[now] + "' style='width:99%; height:100%;'></embed>")
+      //$("#mwww").attr("src",lin[now])
+      now++;
+      if (now >= lin.length)
+        now = 0;
+    }
+     */
+  </script>
+
+</body>
+
+</html>
