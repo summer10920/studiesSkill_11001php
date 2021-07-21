@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="slick/slick-theme.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous"/> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    body {
+      background: #358;
+      color: white;
+      margin: 0;
+    }
+
+    .main {
+      margin: 0 auto;
+      text-align: center;
+      width: 50vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      flex: 0 0 414px;
+      overflow: hidden;
+    }
+
+    .aniZone {
+      transform: scale(1);
+      transition: transform 1s;
+      position: relative;
+    }
+
+    .aniZone.scale {
+      transform: scale(0);
+    }
+
+    .control {
+      width: 400px;
+      margin: 10px 30px;
+    }
+
+    .control img {
+      width: 90px;
+      padding: 0 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .main>h1+.box>.aniZone>img+p^^.control -->
+  <div class="main">
+    <h1>預告片介紹</h1>
+    <div class="box">
+      <div class="aniZone">
+        <img src="media/03A04.jpg">
+        <p>123</p>
+      </div>
+    </div>
+    <div class="control"></div>
+  </div>
+
+  <script>
+    $.getJSON("data.json", function (re) {
+      todo(re.q3t4);
+      loki = re.q3t4;
+    })
+
+    const todo = (jsn) => {
+      let pause;
+
+      /******** 資料生成*********************************************/
+      // 小圖
+      for (const key in jsn.img) {
+        $('.control').append(`<img class="minImg" src="${jsn["img"][key]}" alt="${key}">`);
+      }
+
+      // 初始
+      $('.aniZone>img').attr('src', jsn.img[Object.keys(jsn.img)[0]]); // Object.keys 能將指定物件內所有的key以array回傳
+      $('.aniZone>p').html(Object.keys(jsn.img)[0]);
+
+      // 美化
+      $('.control').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4
+      });
+
+      /* 宣告FN***************************************************/
+
+      //替換作業
+      const swap = (key) => {
+        switch (jsn.effect) {
+          case 1:
+            $(".aniZone").fadeToggle(function () {
+              $(this).children('img').attr('src', jsn.img[key]);
+              $(this).children('p').html(key);
+            }).fadeToggle();
+            break;
+
+          case 2:
+            $(".aniZone").slideToggle(function () {
+              $(this).children('img').attr('src', jsn.img[key]);
+              $(this).children('p').html(key);
+            }).slideToggle();
+            break;
+
+          case 3:
+            $(".aniZone").toggleClass('scale');
+            setTimeout(() => {
+              $(".aniZone").children('img').attr('src', jsn.img[key]);
+              $(".aniZone").children('p').html(key);
+              $(".aniZone").toggleClass('scale');
+            }, 1000);
+            break;
+
+          case 4:
+            $(".aniZone").animate({ left: "-100%" }, function () {
+              $(this).children('img').attr('src', jsn.img[key]);
+              $(this).children('p').html(key);
+              $(this).css("left", "100%");
+            }).animate({ left: "0" });
+            break;
+
+        }
+      }
+
+
+      //自動輪播
+      const autoplay = (nowKey) => { //告知目前主圖名稱是甚麼，好方便幫你呼叫下一張swap
+        //現在是03A03
+        let nowIndex = Object.keys(jsn.img).indexOf(nowKey);  // 算出位置為 2
+
+        pause = setInterval(() => {
+          nowIndex = (nowIndex + 1) % Object.keys(jsn.img).length; //更新為 0
+          const targetKey = Object.keys(jsn.img)[nowIndex];// 0 -> 03A01
+          swap(targetKey);  //swap(03A01)
+        }, 3000);
+      }
+
+      /* 事件*******************************************************/
+      $('.minImg').click(function () {
+        // console.log(Object.keys(jsn.img).find(key => jsn.img[key] === $(this).attr('src')));
+
+        const nowKey = $(this).attr('alt');
+        //執行FN
+        swap(nowKey);
+        clearInterval(pause);
+        autoplay(nowKey);
+      });
+
+
+      //開始2秒後自動換
+      autoplay(Object.keys(jsn.img)[0]);  // "03A03" -> index:2 -> targetIndex:3 -> "03A04" =>swap("03A04")
+    }
+  </script>
+</body>
+
+</html>

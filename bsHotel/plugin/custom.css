@@ -1,3 +1,7 @@
+:root {
+  scroll-behavior: auto;
+}
+
 body {
   font-family: 'Roboto', 'Noto Sans TC', arial, sans-serif;
   background: #eee;
@@ -138,19 +142,35 @@ body {
   color: white !important;
 }
 
-#lokiFood small{
-  transform: rotate(-20deg) translate(-25%,-25%);
+#lokiFood small {
+  transform: rotate(-20deg) translate(-25%, -25%);
   z-index: 999;
 }
 
 /***********lokiTrans*********/
-#lokiTrans iframe{
+#lokiTrans iframe {
   filter: grayscale(70%) brightness(30%);
 }
 
 /*********轉場*************/
 /* #lokiMenu .nav-link,
 #lokiRoom .nav-link{ */
-  .nav-link{
+.nav-link {
   transition: 1s ease;
+}
+
+.nav-link::after,
+#lokiMenu .navbar-brand::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: white;
+  margin: 5px 0;
+  transition: 1s width ease;
+}
+
+.nav-link.active::after,
+#lokiMenu .navbar-brand.active::after {
+  width: 100%;
 }

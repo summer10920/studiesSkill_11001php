@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th width="30%">標題</th>
+        <th width="70%">內容</th>
+      </tr>
+    </thead>
+    <tbody id="abc">
+    </tbody>
+  </table>
+
+  <div id="alt"
+    style="position: absolute; width: 500px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;">
+  </div>
+
+  <script>
+    $.getJSON('data.json', function (result) {
+      todo(result.q2t11);
+    });
+
+    const todo = (jsn) => {
+      for (const key in jsn) {
+        $("#abc").append(`
+        <tr>
+          <td>${key}</td>
+          <td class="sswww">${jsn[key].substr(0, 10)}...</td>
+        </tr>
+        `);
+      }
+
+      $(".sswww").hover(function () {
+        const getkey = $(this).prev().html();
+        $("#alt")
+          .html(jsn[getkey])
+          .css({
+            "top": $(this).offset().top + 25,
+            "left": $(this).offset().left - 5
+          })
+          .show();
+      });
+
+      $(".sswww").mouseout(function () {
+        $("#alt").hide();
+      });
+    }
+
+  </script>
+</body>
+
+</html>
