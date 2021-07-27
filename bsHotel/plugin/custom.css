@@ -50,6 +50,7 @@ body {
   right: 5vh;
   bottom: 5vh;
   z-index: 999;
+  display: none;
 }
 
 #lokiArrow i {
@@ -156,7 +157,11 @@ body {
 /* #lokiMenu .nav-link,
 #lokiRoom .nav-link{ */
 .nav-link {
-  transition: 1s ease;
+  transition: 1.5s ease;
+}
+
+#lokiMenu{
+  transition: 2s;
 }
 
 .nav-link::after,

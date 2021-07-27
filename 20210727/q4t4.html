@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <style>
+    a {
+      display: block;
+      padding: 20px 5px;
+      background: #F4C591;
+      width: 200px;
+      margin: 10px auto;
+      text-decoration: none;
+      color: #65350A;
+      text-align: center;
+    }
+
+    .son {
+      background: #fce2c4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <!-- 
+    <a href="#">全部商品(?)</a>
+    <a href="?f=1" class="fa1">流行皮件(3)</a>
+    <a href="?f=1&s=5" class="fa1 son">男用皮件(3)</a>
+    <a href="?f=1&s=6" class="fa1 son">女用皮件(0)</a>
+    <a href="#" class="fa2">流行鞋區(2)</a>
+    <a href="#" class="fa2 son">少女鞋區(1)</a>
+    <a href="#" class="fa2 son">紳士流行鞋區(1)</a>
+    -->
+  </div>
+  <script>
+    $.getJSON('data.json', function (re) {
+      todo(re.q4t4);
+    });
+    const todo = function (jsn) {
+      let faMix = 0;
+      for (const fa of jsn) {
+        let
+          sonMix = 0,
+          printHTML = "";
+        for (const son of fa.sub) {
+          printHTML += `<a href="?f=${fa.id}&s=${son.id}" class="fa${fa.id} son">${son.title}(${son.count})</a>`;
+          sonMix += son.count;
+        }
+        // console.log(sonMix, printHTML); //3 2 1 2
+
+        $('.menu').append(`
+          <a href="?f=${fa.id}" id="fa${fa.id}" class="fa">${fa.title}(${sonMix})</a>
+        `+ printHTML);
+
+        faMix += sonMix;
+      }
+      $('.menu').prepend(`<a href="#">全部商品(${faMix})</a>`);
+
+      $('.son').hide();
+      $('.fa').mouseover(function () {
+        const wakeup = this.id; //fa1
+        $(".son").not("." + wakeup).slideUp('fast');
+        $("." + wakeup).slideDown('fast');
+      });
+
+    }
+  </script>
+</body>
+
+</html>
