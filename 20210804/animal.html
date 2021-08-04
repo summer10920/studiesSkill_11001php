@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <style>
+    .addData {
+      position: fixed;
+      right: 100px;
+      bottom: 100px;
+      width: 100px;
+      height: 100px;
+      background: sandybrown;
+      border-radius: 50%;
+      font-size: 100px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .addData:hover {
+      background: rgb(236, 185, 140);
+    }
+
+    .a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .b {
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .insertZone {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #333a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <table width="100%" style="text-align: center;">
+    <thead>
+      <tr>
+        <th>編號</th>
+        <th>動物名稱</th>
+        <th>重量</th>
+        <th>簡介</th>
+        <th>更新日期</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td colspan="6">
+          <hr>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" style="text-align: center;">
+          <hr>
+          <button class="btnMore" onclick="loading()">載入更多</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="addData b">+</div>
+  <div class="insertZone"></div>
+  <script>
+    //////////////////////select
+    const loading = () => {
+      $.post('api.php?do=select', { start }, function (re) {
+        // console.log(re);
+        if (re != "fail") {
+          $('tbody').append(re);
+          $(".mdy").click(chginput); //等到畫面上有按鈕才能綁事件
+          start += 10;
+        } else $(".btnMore").before('<b>沒有資料</b>').remove();
+      });
+    }
+
+    //////////////////update
+    const chginput = function () {
+      const items = $(this).parent().siblings();
+
+      $(this).parents("tr").html(`
+          <td><input type="hidden" name="id" value="${items.eq(0).text()}">${items.eq(0).text()}</td>
+          <td><input name="name" value="${items.eq(1).text()}"></td>
+          <td><input name="weight" value="${items.eq(2).text()}"></td>
+          <td><input name="info" value="${items.eq(3).text()}"></td>
+          <td>${items.eq(4).text()}</td>
+          <td><button onclick="chgsend(this)">儲存</button></td>
+      `);
+    }
+
+    const chgsend = function (who) {
+      // 1. 送資料給後端 2. 後端提供更新時間 3.將畫面變回普通文字
+      // console.log(who);
+      const data = $(who).parents("tr").find("input").serialize(); //序列化資料
+      $.post('api.php?do=update', data, function (mdate) {
+        const items = $(who).parents("tr").find("input");
+
+        const newdata = {
+          id: items.eq(0).val(),
+          name: items.eq(1).val(),
+          weight: items.eq(2).val(),
+          info: items.eq(3).val(),
+          date: mdate
+        }
+
+        $(who).parents("tr").html(`
+          <td>${newdata.id}</td>
+          <td>${newdata.name}</td>
+          <td>${newdata.weight}</td>
+          <td>${newdata.info}</td>
+          <td>${newdata.date}</td>
+          <td><button class="mdy">修改</button> | <button onclick="del(this)">刪除</button></td>
+        `);
+
+        $(".mdy").click(chginput);
+      });
+    }
+
+    ///////////////////////delete
+    const del = who => {
+      const id = $(who).parent().siblings().eq(0).text();
+      // console.log(id);
+
+      // $.post('api.php?do=delete',{id:id},function(re){});
+      $.post('api.php?do=delete', { id }, function (re) {
+        if (re) $(who).parent().parent().remove();
+      });
+    }
+
+
+    //作業區
+    let start = 0;
+    loading();
+
+
+
+  </script>
+</body>
+
+</html>

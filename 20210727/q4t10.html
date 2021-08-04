@@ -35,6 +35,16 @@
     }
 
 
+    $.ajax({
+      type: 'get',
+      url: 'data.json',
+      success: function (result) {
+        console.log(result);
+      },
+      dataType: 'html' //可省略不寫
+    });
+
+
   </script>
 </body>
 
