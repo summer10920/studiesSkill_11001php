@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <form>
+    電影：<select name="mm" id="sm" onchange="gd()"></select>
+    日期：<select name="dd" id="sd" onchange="gt()"></select>
+    場次：<select name="tt" id="st"></select>
+    <input type="submit" value="確認">
+  </form>
+
+
+  <script>
+    //宣告區
+    const gd = () => {  // 需要知道#sm value (是哪部電影)  => 該電影的日期表
+      // if #sm value is 3 =>  send {id:3}
+      $.get('q3t8.php?do=getdate', { id: $("#sm").val() }, function (re) {
+
+        let content = '';
+        for (const row of re)
+          content += `<option value="${row.id}">${row.date}</option>`;
+        $("#sd").html(content);
+
+        gt();
+      }, "JSON");
+
+    }
+
+    const gt = () => {  // 需要知道#sd value (是哪部電影之指定日)  => 所有訂單(哪些人買了那天某電影的票)
+      $.get('q3t8.php?do=gettime', { id: $("#sd").val() }, function (re) {
+
+        let times = [
+          { txt: "1000~1200", ticketlast: 20 },  // time value=1
+          { txt: "1200~1400", ticketlast: 20 },
+          { txt: "1400~1600", ticketlast: 20 },
+          { txt: "1600~1800", ticketlast: 20 },
+          { txt: "1800~2000", ticketlast: 20 },
+          { txt: "2000~2200", ticketlast: 20 },
+          { txt: "2200~2400", ticketlast: 20 }
+        ];
+        for (const row of re)
+          times[row.time - 1].ticketlast -= row.sellout;
+
+        let content = '';
+        let count = 1;
+
+        //考量不該列入content的文字
+        const nowTime = new Date();
+
+        const
+          //10=>1 11=>1 12=>2 13=>2 14=>3 15=>3 : X=>Y |  Y=floor(X/2)-4
+          nowNum = Math.floor(nowTime.getHours() / 2) - 4, //3
+
+          nowDay = nowTime.toDateString(),  //Thu Aug 05 2021
+          selectDay = new Date($("#sd option:selected").text()).toDateString();
+
+        for (const row of times) {
+          if (count <= nowNum && nowDay == selectDay) count++;
+          else content += `<option value="${count++}">${row.txt} 剩餘座位 ${row.ticketlast}</option>`;
+        }
+        $("#st").html(content);
+
+      }, "JSON");
+    }
+
+    //作業區
+    $.get("q3t8.php", { "do": "getmovie" }, function (re) {
+      data = JSON.parse(re);
+
+      let content = '';
+      for (const row of data)
+        content += `<option value="${row.id}">${row.movie}</option>`;
+      $("#sm").html(content);
+      gd();
+    });
+
+
+
+  </script>
+</body>
+
+</html>

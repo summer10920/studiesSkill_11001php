@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $db = new PDO("mysql:host=127.0.0.1;dbname=jq_sample;charset=utf8", "root", "");
 date_default_timezone_set('asia/Taipei');
 // print_r($_POST);

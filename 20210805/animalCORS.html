@@ -108,7 +108,7 @@
 
       $(".insertZone button:contains('新增')").on('click', function () {
         data = $(this).parents("form").find("input");
-        $.post("api.php?do=insert", data.serialize(), function (re) {
+        $.post("http://192.168.1.105/20210805/apiCORS.php?do=insert", data.serialize(), function (re) {
           if (re) {
             console.log(re);
             $(".insertZone").fadeOut();
@@ -132,7 +132,7 @@
 
     //////////////////////select
     const loading = () => {
-      $.post('api.php?do=select', { start }, function (re) {
+      $.post('http://192.168.1.105/20210805/apiCORS.php?do=select', { start }, function (re) {
         // console.log(re);
         // if (re != "fail") {
         //   $('tbody').append(re);
@@ -164,7 +164,7 @@
       // 1. 送資料給後端 2. 後端提供更新時間 3.將畫面變回普通文字
       // console.log(who);
       const data = $(who).parents("tr").find("input").serialize(); //序列化資料
-      $.post('api.php?do=update', data, function (mdate) {
+      $.post('http://192.168.1.105/20210805/apiCORS.php?do=update', data, function (mdate) {
         const items = $(who).parents("tr").find("input");
 
         const newdata = {
@@ -193,8 +193,8 @@
       const id = $(who).parent().siblings().eq(0).text();
       // console.log(id);
 
-      // $.post('api.php?do=delete',{id:id},function(re){});
-      $.post('api.php?do=delete', { id }, function (re) {
+      // $.post('http://192.168.1.105/20210805/apiCORS.php?do=delete',{id:id},function(re){});
+      $.post('http://192.168.1.105/20210805/apiCORS.php?do=delete', { id }, function (re) {
         if (re) $(who).parent().parent().remove();
       });
     }

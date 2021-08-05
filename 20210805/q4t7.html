@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h3>註冊帳號</h3>
+  <form onsubmit="return chkflag()">
+    帳號：<input type="text" name="acc"> <input type="button" value="檢測" onclick="chk()"><br>
+    密碼：<input type="password" name="pwd"><br>
+    <input type="submit" value="送出">
+  </form>
+
+
+  <script>
+    let flag = 0;
+    const chk = () => {
+      const acc = $("input[name=acc]").val();
+      // $.post('q4t7.php?do=checkuser', { acc }, function (re) {
+      //   alert(re);
+      //   flag = re == "可使用此帳號" ? 1 : 0;
+      // });
+      $.ajax({
+        type: "POST",
+        url: 'q4t7.php?do=checkuser',
+        data: { acc },
+        xe,
+        success: function (re) {
+          alert(re);
+          flag = (re == "可使用此帳號") ? 1 : 0;
+        }
+      });
+    }
+
+    const chkflag = () => {
+      chk();
+      if (!flag) {
+        alert("請先驗證帳號");
+        return false;
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
