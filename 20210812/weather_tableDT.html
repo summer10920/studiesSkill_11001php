@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+
+  <!-- DT -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/b-1.7.1/b-print-1.7.1/datatables.min.css" /> -->
+  <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/b-1.7.1/b-print-1.7.1/datatables.min.js"></script> -->
+
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.css" />
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.js"></script>
+
+  <style>
+    body {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>36小時天氣預報</h1>
+  <table class="table table-striped table-warning table-sm table-hover  align-middle">
+    <thead>
+      <tr class="table-dark">
+        <th>編號</th>
+        <th>城市</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+
+  <script>
+    let data;
+    $.getJSON('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-77F7EF76-6578-458C-ACDF-72ABF4BE7727&downloadType=WEB&format=JSON')
+      .done(function (re) {
+        // re => data => DOM write => HTML
+        loki = re;
+        data = re.cwbopendata.dataset.location;
+        //標題
+        const hurTxt = new Array();
+        hurTxt[0] = "凌晨"; //n
+        hurTxt[6] = "白天"; //d
+        hurTxt[12] = "下午"; //d
+        hurTxt[18] = "晚上"; //n
+        // console.log(hurTxt);
+
+        const
+          time0 = new Date(data[21].weatherElement[0].time[0].startTime),
+          time1 = new Date(data[21].weatherElement[0].time[1].startTime),
+          time2 = new Date(data[21].weatherElement[0].time[2].startTime),
+          timeTxt0 = `${time0.getFullYear() + "/" + (time0.getMonth() + 1) + "/" + time0.getDate()} ${hurTxt[time0.getHours()]}`,
+          timeTxt1 = `${time1.getFullYear() + "/" + (time1.getMonth() + 1) + "/" + time1.getDate()} ${hurTxt[time1.getHours()]}`,
+          timeTxt2 = `${time2.getFullYear() + "/" + (time2.getMonth() + 1) + "/" + time2.getDate()} ${hurTxt[time2.getHours()]}`;
+        // console.log(timeTxt0,timeTxt1,timeTxt2);
+
+        $("tr>th").eq(2).text(timeTxt0);
+        $("tr>th").eq(3).text(timeTxt1);
+        $("tr>th").eq(4).text(timeTxt2);
+
+        const
+          iconTxt0 = (time0.getHours() == 6 || time0.getHours() == 12) ? "day" : "night",
+          iconTxt1 = (time1.getHours() == 6 || time1.getHours() == 12) ? "day" : "night",
+          iconTxt2 = (time2.getHours() == 6 || time2.getHours() == 12) ? "day" : "night";
+
+
+        // 22個城市
+        for (let i = 0; i < data.length; i++) {
+          const row = data[i];
+          $("tbody").append(`
+        <tr>
+          <td>${i + 1}</td>
+          <td>${row.locationName}</td>
+          <td>
+            <img src="img/${iconTxt0}/${row.weatherElement[0].time[0].parameter.parameterValue}.svg" style="float:left;width:3rem">
+            ${row.weatherElement[0].time[0].parameter.parameterName} <br>
+            溫度 ${row.weatherElement[2].time[0].parameter.parameterName} ~ ${row.weatherElement[1].time[0].parameter.parameterName} ℃
+          </td>
+          <td>
+            <img src="img/${iconTxt1}/${row.weatherElement[0].time[1].parameter.parameterValue}.svg" style="float:left;width:3rem;">
+            ${row.weatherElement[0].time[1].parameter.parameterName}<br>
+            溫度 ${row.weatherElement[2].time[1].parameter.parameterName} ~ ${row.weatherElement[1].time[1].parameter.parameterName} ℃
+          </td>
+          <td>
+            <img src="img/${iconTxt2}/${row.weatherElement[0].time[2].parameter.parameterValue}.svg" style="float:left;width:3rem;">
+            ${row.weatherElement[0].time[2].parameter.parameterName}<br>
+            溫度 ${row.weatherElement[2].time[2].parameter.parameterName} ~ ${row.weatherElement[1].time[2].parameter.parameterName} ℃
+          </td>
+        </tr>
+      `);
+        }
+
+        $('table').DataTable();
+      }).fail(function (re) {
+        console.log("api error!", re);
+      });
+
+  </script>
+</body>
+
+</html>

@@ -9,6 +9,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"
+    integrity="sha512-bv7N4KB9o6up3AwlbrA0rATZTS8mLnOI4DdB7G/9rKugtRlHAfZA70hx4oINqjdoz8tQurQ55rs0MHPrXv1CIw=="
+    crossorigin="anonymous"></script>
+  <script>
+    moment.locale("zh-tw");
+  </script>
 </head>
 
 <body>
@@ -33,7 +39,6 @@
     let data;
     $.getJSON('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-77F7EF76-6578-458C-ACDF-72ABF4BE7727&downloadType=WEB&format=JSON').done(function (re) {
       // re => data => DOM write => HTML
-      loki = re;
       data = re.cwbopendata.dataset.location;
       //標題
       const hurTxt = new Array();
@@ -44,22 +49,23 @@
       // console.log(hurTxt);
 
       const
-        time0 = new Date(data[21].weatherElement[0].time[0].startTime),
-        time1 = new Date(data[21].weatherElement[0].time[1].startTime),
-        time2 = new Date(data[21].weatherElement[0].time[2].startTime),
-        timeTxt0 = `${time0.getFullYear() + "/" + (time0.getMonth() + 1) + "/" + time0.getDate()} ${hurTxt[time0.getHours()]}`,
-        timeTxt1 = `${time1.getFullYear() + "/" + (time1.getMonth() + 1) + "/" + time1.getDate()} ${hurTxt[time1.getHours()]}`,
-        timeTxt2 = `${time2.getFullYear() + "/" + (time2.getMonth() + 1) + "/" + time2.getDate()} ${hurTxt[time2.getHours()]}`;
-      // console.log(timeTxt0,timeTxt1,timeTxt2);
+        time0 = moment(new Date(data[21].weatherElement[0].time[0].startTime)),
+        time1 = moment(new Date(data[21].weatherElement[0].time[1].startTime)),
+        time2 = moment(new Date(data[21].weatherElement[0].time[2].startTime)),
+
+        timeTxt0 = `${time0.format("ll")} ${hurTxt[time0.hour()]}`,
+        timeTxt1 = `${time1.format("ll")} ${hurTxt[time1.hour()]}`,
+        timeTxt2 = `${time2.format("ll")} ${hurTxt[time2.hour()]}`;
 
       $("tr>th").eq(2).text(timeTxt0);
       $("tr>th").eq(3).text(timeTxt1);
       $("tr>th").eq(4).text(timeTxt2);
 
       const
-        iconTxt0 = (time0.getHours() == 6 || time0.getHours() == 12) ? "day" : "night",
-        iconTxt1 = (time1.getHours() == 6 || time1.getHours() == 12) ? "day" : "night",
-        iconTxt2 = (time2.getHours() == 6 || time2.getHours() == 12) ? "day" : "night";
+        iconTxt0 = (time0.hours() == 6 || time0.hours() == 12) ? "day" : "night",
+        iconTxt1 = (time1.hours() == 6 || time1.hours() == 12) ? "day" : "night",
+        iconTxt2 = (time2.hours() == 6 || time2.hours() == 12) ? "day" : "night";
+
 
 
       // 22個城市
