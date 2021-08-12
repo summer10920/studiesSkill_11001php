@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>36小時天氣預報</h1>
+  <table border="1" width=100%>
+    <thead>
+      <tr>
+        <td>編號</td>
+        <td>地區</td>
+        <td>時間1</td>
+        <td>時間2</td>
+        <td>時間3</td>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+
+  <script>
+    let data;
+    $.getJSON('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-77F7EF76-6578-458C-ACDF-72ABF4BE7727&downloadType=WEB&format=JSON').done(function (re) {
+      // re => data => DOM write => HTML
+      data = re.cwbopendata.dataset.location;
+
+
+      for (let i = 0; i < data.length; i++) {
+
+        $("tbody").append(`
+        <tr>
+          <td>${i}</td>
+          <td>${data[i].locationName}</td>
+          <td>${data[i].weatherElement[0].time[0].parameter.parameterName} <img src="https://fakeimg.pl/20x20">｜溫度 30~34 ℃</td>
+          <td></td>
+          <td></td>
+        </tr>
+      `);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }).fail(function (re) {
+      console.log("api error!", re);
+    });
+  </script>
+</body>
+
+</html>
