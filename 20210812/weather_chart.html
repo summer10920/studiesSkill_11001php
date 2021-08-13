@@ -20,162 +20,171 @@
   <h1>一週北部地區 - 最低溫度</h1>
   <canvas id="nightChart" width="320" height="70" style="background:rgba(119, 136, 153, 0.2);color:white"></canvas>
   <script>
-    var dayprint = $('#dayChart');
-    var nightprint = $('#nightChart');
-    let tp, nt, tu, kl;
-    const
-      xLabel = new Array(),
-      tpTH = new Array(),
-      ntTH = new Array(),
-      tuTH = new Array(),
-      klTH = new Array(),
-      tpTL = new Array(),
-      ntTL = new Array(),
-      tuTL = new Array(),
-      klTL = new Array();
+      $.getJSON('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-005?Authorization=CWB-77F7EF76-6578-458C-ACDF-72ABF4BE7727&downloadType=WEB&format=JSON')
+        .done(function (re) {
+          const
+            dayprint = $('#dayChart'),
+            nightprint = $('#nightChart'),
+            tp = re.cwbopendata.dataset.location[0],
+            nt = re.cwbopendata.dataset.location[1],
+            tu = re.cwbopendata.dataset.location[2],
+            kl = re.cwbopendata.dataset.location[6],
+            xLabel = new Array(),
+            tpTH = new Array(),
+            ntTH = new Array(),
+            tuTH = new Array(),
+            klTH = new Array(),
+            tpTL = new Array(),
+            ntTL = new Array(),
+            tuTL = new Array(),
+            klTL = new Array();
 
-    $.getJSON('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-005?Authorization=CWB-77F7EF76-6578-458C-ACDF-72ABF4BE7727&downloadType=WEB&format=JSON')
-      .done(function (re) {
-        tp = re.cwbopendata.dataset.location[0];
-        nt = re.cwbopendata.dataset.location[1];
-        tu = re.cwbopendata.dataset.location[2];
-        kl = re.cwbopendata.dataset.location[6];
+          for (let i = 0; i < tp.weatherElement[0].time.length; i++) {
+            xLabel.push(tp.weatherElement[0].time[i].startTime.substring(5, 13));
+            tpTH.push(tp.weatherElement[1].time[i].parameter.parameterName);
+            ntTH.push(nt.weatherElement[1].time[i].parameter.parameterName);
+            tuTH.push(tu.weatherElement[1].time[i].parameter.parameterName);
+            klTH.push(kl.weatherElement[1].time[i].parameter.parameterName);
+            tpTL.push(tp.weatherElement[2].time[i].parameter.parameterName);
+            ntTL.push(nt.weatherElement[2].time[i].parameter.parameterName);
+            tuTL.push(tu.weatherElement[2].time[i].parameter.parameterName);
+            klTL.push(kl.weatherElement[2].time[i].parameter.parameterName);
+          }
+          // for (const item of tp.weatherElement[0].time) {
+          //   xLabel.push(item.startTime.substring(5, 13)); //14個時間做為X軸標題
+          // }
+          // for (const item of tp.weatherElement[1].time) {
+          //   tpTH.push(item.parameter.parameterName); //tp 14個時間之最高溫度
+          // }
+          // for (const item of nt.weatherElement[1].time) {
+          //   ntTH.push(item.parameter.parameterName); //nt 14個時間之最高溫度
+          // }
+          // for (const item of tu.weatherElement[1].time) {
+          //   tuTH.push(item.parameter.parameterName); //tu 14個時間之最高溫度
+          // }
+          // for (const item of kl.weatherElement[1].time) {
+          //   klTH.push(item.parameter.parameterName); //kl 14個時間之最高溫度
+          // }
+          // for (const item of tp.weatherElement[2].time) {
+          //   tpTL.push(item.parameter.parameterName); //tp 14個時間之最低溫度
+          // }
+          // for (const item of nt.weatherElement[2].time) {
+          //   ntTL.push(item.parameter.parameterName); //nt 14個時間之最低溫度
+          // }
+          // for (const item of tu.weatherElement[2].time) {
+          //   tuTL.push(item.parameter.parameterName); //tu 14個時間之最低溫度
+          // }
+          // for (const item of kl.weatherElement[2].time) {
+          //   klTL.push(item.parameter.parameterName); //kl 14個時間之最低溫度
+          // }
 
-        for (const item of tp.weatherElement[0].time) {
-          xLabel.push(item.startTime.substring(5, 13)); //14個時間做為X軸標題
-        }
-        for (const item of tp.weatherElement[1].time) {
-          tpTH.push(item.parameter.parameterName); //tp 14個時間之最高溫度
-        }
-        for (const item of nt.weatherElement[1].time) {
-          ntTH.push(item.parameter.parameterName); //nt 14個時間之最高溫度
-        }
-        for (const item of tu.weatherElement[1].time) {
-          tuTH.push(item.parameter.parameterName); //tu 14個時間之最高溫度
-        }
-        for (const item of kl.weatherElement[1].time) {
-          klTH.push(item.parameter.parameterName); //kl 14個時間之最高溫度
-        }
-        for (const item of tp.weatherElement[2].time) {
-          tpTL.push(item.parameter.parameterName); //tp 14個時間之最低溫度
-        }
-        for (const item of nt.weatherElement[2].time) {
-          ntTL.push(item.parameter.parameterName); //nt 14個時間之最低溫度
-        }
-        for (const item of tu.weatherElement[2].time) {
-          tuTL.push(item.parameter.parameterName); //tu 14個時間之最低溫度
-        }
-        for (const item of kl.weatherElement[2].time) {
-          klTL.push(item.parameter.parameterName); //kl 14個時間之最低溫度
-        }
 
-
-        var myChart = new Chart(dayprint, {
-          type: 'line',
-          data: {
-            labels: xLabel, // X軸標題
-            datasets: [{
-              label: tp.locationName,
-              data: tpTH,
-              borderColor: 'rgba(255, 99, 132, 1)',
-              backgroundColor: 'rgba(255, 99, 132, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
+          var myChart = new Chart(dayprint, {
+            type: 'line',
+            data: {
+              labels: xLabel, // X軸標題
+              datasets: [{
+                label: tp.locationName,
+                data: tpTH,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: nt.locationName,
+                data: ntTH,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: tu.locationName,
+                data: tuTH,
+                borderColor: 'rgba(255, 206, 86, 1)',
+                backgroundColor: 'rgba(255, 206, 86, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: kl.locationName,
+                data: klTH,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              ]
             },
-            {
-              label: nt.locationName,
-              data: ntTH,
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            {
-              label: tu.locationName,
-              data: tuTH,
-              borderColor: 'rgba(255, 206, 86, 1)',
-              backgroundColor: 'rgba(255, 206, 86, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            {
-              label: kl.locationName,
-              data: klTH,
-              borderColor: 'rgba(75, 192, 192, 1)',
-              backgroundColor: 'rgba(75, 192, 192, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            ]
-          },
-          options: {
-            scales: {
-              y: {
-                // beginAtZero: true
-                ticks: { stepSize: 0.5 },
-                grace: 1
+            options: {
+              scales: {
+                y: {
+                  // beginAtZero: true
+                  ticks: { stepSize: 0.5 },
+                  grace: 1
 
+                }
               }
             }
-          }
-        });
-        var myChart = new Chart(nightprint, {
-          type: 'line',
-          data: {
-            labels: xLabel, // X軸標題
-            datasets: [{
-              label: tp.locationName,
-              data: tpTL,
-              borderColor: 'rgba(255, 99, 132, 1)',
-              backgroundColor: 'rgba(255, 99, 132, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
+          });
+          var myChart = new Chart(nightprint, {
+            type: 'line',
+            data: {
+              labels: xLabel, // X軸標題
+              datasets: [{
+                label: tp.locationName,
+                data: tpTL,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: nt.locationName,
+                data: ntTL,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: tu.locationName,
+                data: tuTL,
+                borderColor: 'rgba(255, 206, 86, 1)',
+                backgroundColor: 'rgba(255, 206, 86, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              {
+                label: kl.locationName,
+                data: klTL,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                tension: 0.3,
+                fill: true,
+                borderDash: [5, 5],
+              },
+              ]
             },
-            {
-              label: nt.locationName,
-              data: ntTL,
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            {
-              label: tu.locationName,
-              data: tuTL,
-              borderColor: 'rgba(255, 206, 86, 1)',
-              backgroundColor: 'rgba(255, 206, 86, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            {
-              label: kl.locationName,
-              data: klTL,
-              borderColor: 'rgba(75, 192, 192, 1)',
-              backgroundColor: 'rgba(75, 192, 192, 0.1)',
-              tension: 0.3,
-              fill: true,
-              borderDash: [5, 5],
-            },
-            ]
-          },
-          options: {
-            scales: {
-              y: {
-                // beginAtZero: true
-                ticks: { stepSize: 0.5 },
-                grace: 1
+            options: {
+              scales: {
+                y: {
+                  // beginAtZero: true
+                  ticks: { stepSize: 0.5 },
+                  grace: 1
+                }
               }
             }
-          }
+          });
         });
-      });
 
 
 

@@ -19,21 +19,14 @@
   <link rel="stylesheet" href="plugin/bootstrap.min.css">
   <link rel="stylesheet" href="plugin/custom.css">
   <script src="plugin/bootstrap.bundle.min.js"></script>
-
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- 導覽列 -->
-  <header id="lokiMenu" class="fixed-top">
+  <header id="lokiMenu" class="bg-dark fixed-top">
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#lokiSlider">泰山度假飯店</a>
+        <a class="navbar-brand" href="#">泰山度假飯店</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lokiNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -392,7 +385,7 @@
     <!-- 設計內容 -->
     <article class="py-5 container text-white">
       <ul class="row gy-4 list-unstyled">
-        <li class="col-12 col-lg-6" data-aos="fade-right">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -401,7 +394,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 col-lg-6" data-aos="fade-left" data-aos-delay="500">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -410,7 +403,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 col-lg-6" data-aos="fade-right">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -420,7 +413,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 col-lg-6" data-aos="fade-left" data-aos-delay="500">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -429,7 +422,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 col-lg-6" data-aos="fade-right">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -438,7 +431,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 col-lg-6" data-aos="fade-left" data-aos-delay="500">
+        <li class="col-12 col-lg-6">
           <div class="row gy-4 align-items-center">
             <img class="col-sm-6" src="https://fakeimg.pl/400x400">
             <div class="col-sm-6">
@@ -625,9 +618,7 @@
           <img src="https://ws.wda.gov.tw/001/Upload/308/sites/pagebackimage/366d4144-bdac-4a20-a1f2-b0846004efc0.png">
         </a>
         <a href="https://www.taiwanjobs.gov.tw/home109/index.aspx" target="_blank">
-          <img
-            src="https://icmp-ws.chiayi.gov.tw/001/Upload/408/relpic/9352/408618/8e7e31cb-201c-4b6f-802f-920fb8f06e28@710x470.png"
-            alt="台灣就業通">
+          <img src="https://icmp-ws.chiayi.gov.tw/001/Upload/408/relpic/9352/408618/8e7e31cb-201c-4b6f-802f-920fb8f06e28@710x470.png"  alt="台灣就業通">
         </a>
       </div>
 
@@ -642,78 +633,12 @@
       copyright &copy; <span class="text-warning">洛奇數位設計</span>. all rights reserved
     </small>
     <div id="lokiArrow" class="position-fixed">
-      <a href="#lokiSlider" class="btn btn-warning text-white rounded-circle p-2 border-0">
+      <a href="#" class="btn btn-warning text-white rounded-circle p-2 border-0">
         <i class="fas fa-chevron-up"></i>
       </a>
     </div>
   </footer>
-  <script>
-    //scroll to id
-    $("#lokiMenu a, #lokiArrow a").click(function () {
-      const
-        who = $(this).attr('href'),
-        val = $(who).offset().top - $("#lokiMenu").innerHeight();
-      $("html").animate({ scrollTop: val }, 1000);
-    });
 
-    //scroll spy
-    const spy = function () {
-      const nowat = $(window).scrollTop();
-      $("section").each((i, e) => {
-        // console.log(i,e);
-        const
-          id = $(e).attr('id'),
-          offset = $(e).offset().top - $("#lokiMenu").innerHeight() - 1,
-          height = $(e).innerHeight();
-
-
-        if (offset <= nowat && nowat < offset + height) {
-          // console.log(id);
-          $("#lokiMenu a").removeClass('active');
-          $(`#lokiMenu a[href='#${id}']`).addClass('active');
-        }
-      });
-    }
-
-    //check bg menu
-    const bgmenu = function () {
-      const
-        viewWidth = $(window).innerWidth(),
-        nowat = $(window).scrollTop(),
-        height = $("#lokiSlider").innerHeight(),
-        offset = $("#lokiMenu").innerHeight() + 1;
-
-      if (nowat <= height - offset) {  //0~910 若在 首區內
-        $("#lokiArrow").fadeOut(); //隱藏至頂按鈕
-
-        if (viewWidth > 767) $("#lokiMenu").removeClass('bg-dark');  // 大畫面
-        else $("#lokiMenu").addClass('bg-dark'); // 小畫面
-
-      } else {  //在其他主題時
-        $("#lokiMenu").addClass('bg-dark');
-        $("#lokiArrow").fadeIn();
-      }
-    }
-
-    //當網頁滾動時
-    $(window).scroll(() => {
-      spy();
-      bgmenu();
-    });
-    //當網頁更改寬度時
-    $(window).resize(bgmenu);
-
-
-    spy();
-    bgmenu();
-
-    ////////////animate
-    AOS.init({
-      duration: 1500,
-      once: true
-    });
-
-  </script>
 </body>
 
 </html>
